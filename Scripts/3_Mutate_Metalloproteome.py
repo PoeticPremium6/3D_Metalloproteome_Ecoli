@@ -177,3 +177,53 @@ output_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteo
 merged_dataset.to_csv(output_path, index=False)
 
 print("Merging completed. The merged dataset is saved at:", output_path)
+
+#Alright! Let's clean this up
+import pandas as pd
+
+# Load the dataset
+dataset_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\merged_dataset.csv"
+df = pd.read_csv(dataset_path)
+
+# Remove unnecessary columns (edit this list based on your requirements)
+columns_to_drop = ['entry', 'version', 'sequence_x',
+                   'chr', 'pos', 'ref_strand', 'alt_strand',
+                   'start', 'end', 'sequence_y',
+                   'gene_strand', 'scored_strand',
+                   'wt_score', 'mt_score','ic_difference','percentile_difference',
+                   'cells', 'Reference Genome AA Seq']  # Replace with actual column names you want to drop
+df.drop(columns_to_drop, axis=1, inplace=True)
+print("Current Column Names:")
+print(df.columns.tolist())
+
+# Rename columns (if necessary)
+df.rename(columns={'ref': 'TF_ref_Nucleotide', 'alt': 'TF_alt_Nucleotide',
+                   'tf': 'Predicted_TF', 'downsteam': 'Gene_Downstream_TF',
+                   'knockout_pvalue':'Knockout_pvalue', 'chip_evidence':'ChipSeq_PMID',
+                   'score_difference':'Score_Difference_WildvsMutant', 'Blattner_Number': 'Locus_Tag',
+                   'gene':'Gene_Name', 'AA_orig':'Evol_AA_orig', 'AA_residue':'Evol_AA_residue',
+                   'AA_final': 'Evol_AA_final', 'Codon_Orig': 'Evol_Codon_Orig', 'Codon_Final': 'Evol_Codon_Final',
+                   'del_ration':'Evol_Del_Ratio', 'Protein names': 'Protein_Name', 'Gene Names': 'Gene_Names',
+                   'Length': 'Gene_Length', 'EC number': 'EC_Number', 'Interacts with': 'Known_PPI',
+                   'Pathway':'Metabolic_Pathway', 'Gene Ontology IDs': 'GO_Terms',
+                   'Subcellular location [CC]':'Subcellular_Location','PubMed ID':'PMID',
+                   'Protein families':'Protein_Families', 'Domain [FT]': 'Domains',
+                   'Topological domain':'Topo_Domains', 'acc':'Uniprot_ID',
+                   'position':'Post-trans_Position', 'residue_type':'Post-trans_residue_type',
+                   'pubmed':'Post-trans_PMID','modified_residue':'Post-trans_modified_residue',
+                   'modification': 'Post-trans_modification'}, inplace=True)
+
+# Reorder columns (if necessary)
+df = df[['Uniprot_ID', 'Gene_Names', 'Gene_Name', 'Locus_Tag', 'Gene_Length', 'EC_Number', 'Entry', 'Protein_Name',
+         'Known_PPI', 'Metabolic_Pathway', 'GO_Terms', 'Subcellular_Location',
+         'PMID', 'Protein_Families', 'Domains', 'Topo_Domains',
+         'TF_ref_Nucleotide', 'TF_alt_Nucleotide', 'impact', 'Predicted_TF', 'downstream',
+         'Knockout_pvalue', 'ChipSeq_PMID', 'Score_Difference_WildvsMutant',
+         'Evol_AA_orig', 'Evol_AA_residue', 'Evol_AA_final', 'Evol_Codon_Orig',
+         'Evol_Codon_Final', 'del_ratio', 'Database', 'Post-trans_Position', 'Post-trans_residue_type',
+         'Post-trans_PMID', 'Post-trans_modified_residue', 'Post-trans_modification']]
+
+output_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\cleaned_annotation_file.csv"
+df.to_csv(output_path, index=False)
+print("Cleaned file saved to", output_path)
+
