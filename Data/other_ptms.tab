@@ -1,0 +1,484 @@
+entry	acc	position	residue_type	pubmed	version	modified_residue	modification	sequence
+6PGL_ECOLI	P52697	287	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	VDHSGKYLIAA
+AAT_ECOLI	P00509	246	N6-(pyridoxal phosphate)lysine	3298240	Swiss-Prot 1010711	K	Pyridoxal phosphate	ASSYSKNFGLY
+ADHE_ECOLI	P0A9Q7	358	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	VEKAEKLVAMG
+AHPC_ECOLI	P0AE08	17	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	KNQAFKNGEFI
+AHPC_ECOLI	P0AE08	93	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	TIAKIKYAMIG
+AHPC_ECOLI	P0AE08	153	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	LLRKIKAAQYV
+AHPC_ECOLI	P0AE08	169	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	EVCPAKWKEGE
+AHPC_ECOLI	P0AE08	171	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	CPAKWKEGEAT
+AHPF_ECOLI	P35340	53	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	DKVTFKEDNSL
+AHPF_ECOLI	P35340	354	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	DGPLFKGKRVA
+ALF_ECOLI	P0AB71	9	N6-acetyllysine; alternate	18723842	Swiss-Prot 1010711	K	Acetylation	IFDFVKPGVIT
+ALF_ECOLI	P0AB71	9	N6-malonyllysine; alternate	21908771	Swiss-Prot 1010711	K	N6-malonyllysine	IFDFVKPGVIT
+ALF_ECOLI	P0AB71	9	N6-succinyllysine; alternate	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	IFDFVKPGVIT
+ALF_ECOLI	P0AB71	72	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	SFIAGKGVKSD
+ALF_ECOLI	P0AB71	115	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	DHCAKKLLPWI
+ALF_ECOLI	P0AB71	231	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	VHGVYKPGNVV
+ALF_ECOLI	P0AB71	251	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	QEYVSKKHNLP
+ALF_ECOLI	P0AB71	319	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	QLGNPKGEDQP
+ALF_ECOLI	P0AB71	326	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	EDQPNKKYYDP
+ALF_ECOLI	P0AB71	348	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	IARLEKAFQEL
+ALF1_ECOLI	P0A991	208	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	RNSAFKKDGVD
+ALF1_ECOLI	P0A991	262	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	DRVYSKLTSEN
+AROG_ECOLI	P0AB91	244	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	PNYSAKHVAEV
+CH10_ECOLI	P0A6F9	34	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	GSAAAKSTRGE
+CH60_ECOLI	P0A6F5	34	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	VTLGPKGRNVV
+CH60_ECOLI	P0A6F5	51	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	APTITKDGVSV
+CH60_ECOLI	P0A6F5	117	N6-acetyllysine; alternate	18723842	Swiss-Prot 1010711	K	Acetylation	NPMDLKRGIDK
+CH60_ECOLI	P0A6F5	117	N6-succinyllysine; alternate	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	NPMDLKRGIDK
+CH60_ECOLI	P0A6F5	277	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	KVAAVKAPGFG
+CH60_ECOLI	P0A6F5	321	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	DLGQAKRVVIN
+CH60_ECOLI	P0A6F5	390	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	TEVEMKEKKAR
+CHEY_ECOLI	P0AE67	57	4-aspartylphosphate	1869568	Swiss-Prot 1010711	D	Phosphorylation	GFVISDWNMPN
+CHEY_ECOLI	P0AE67	92	N6-acetyllysine	9560203,11359578	Swiss-Prot 1010711	K	Acetylation	TAEAKKENIIA
+CHEY_ECOLI	P0AE67	109	N6-acetyllysine	1390767,9560203	Swiss-Prot 1010711	K	Acetylation	SGYVVKPFTAA
+CISY_ECOLI	P0ABH7	283	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	EISSVKHIPEF
+CLPB_ECOLI	P63284	96	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	LNLCDKLAQKR
+CLPB_ECOLI	P63284	176	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	RAEQGKLDPVI
+CLPB_ECOLI	P63284	640	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	SEFMEKHSVSR
+CRP_ECOLI	P0ACJ8	101	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	AEISYKKFRQL
+DCEB_ECOLI	P69910	446	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	YKASLKYLSDH
+DCEB_ECOLI	P69910	453	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	LSDHPKLQGIA
+DCEB_ECOLI	P69910	464	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	QQNSFKHT---
+DEOB_ECOLI	P0A6K6	287	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	FDATIKEMKEA
+DEOC_ECOLI	P0A6L0	167	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	GADFIKTSTGK
+DEOD_ECOLI	P0ABP8	27	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	DPLRAKYIAET
+DHSA_ECOLI	P0AC41	267	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	GYLLNKHGERF
+DLDH_ECOLI	P0A9P0	220	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	DKDIVKVFTKR
+DNAK_ECOLI	P0A6Y8	70	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	TLFAIKRLIGR
+DNAK_ECOLI	P0A6Y8	109	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	EVKGQKMAPPQ
+DNAK_ECOLI	P0A6Y8	199	Phosphothreonine; by autocatalysis	1835085,8206983	Swiss-Prot 1010711	T	Phosphorylation	DLGGGTFDISI
+DNAK_ECOLI	P0A6Y8	245	N6-acetyllysine; alternate	18723842	Swiss-Prot 1010711	K	Acetylation	LVEEFKKDQGI
+DNAK_ECOLI	P0A6Y8	245	N6-succinyllysine; alternate	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	LVEEFKKDQGI
+DNAK_ECOLI	P0A6Y8	246	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	VEEFKKDQGID
+DNAK_ECOLI	P0A6Y8	304	N6-acetyllysine; alternate	18723842	Swiss-Prot 1010711	K	Acetylation	KVTRAKLESLV
+DNAK_ECOLI	P0A6Y8	304	N6-succinyllysine; alternate	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	KVTRAKLESLV
+DNAK_ECOLI	P0A6Y8	359	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	AEFFGKEPRKD
+DNAK_ECOLI	P0A6Y8	421	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	TTIPTKHSQVF
+DNAK_ECOLI	P0A6Y8	502	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	QKITIKASSGL
+DNAK_ECOLI	P0A6Y8	528	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	AEADRKFEELV
+DNAK_ECOLI	P0A6Y8	556	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	EEAGDKLPADD
+DNAK_ECOLI	P0A6Y8	587	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	AAIEAKMQELA
+EFG_ECOLI	P0A6M8	504	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	TDVEGKHAKQS
+EFG_ECOLI	P0A6M8	643	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	RRGMLKGQESE
+EFTU1_ECOLI	P0CE47	57	N6,N6-dimethyllysine; alternate	389663,2022614	Swiss-Prot 1010711	K	Methylation	NAPEEKARGIT
+EFTU1_ECOLI	P0CE47	57	N6-methyllysine; alternate	389663,2022614	Swiss-Prot 1010711	K	Methylation	NAPEEKARGIT
+EFTU1_ECOLI	P0CE47	314	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	VYILSKDEGGR
+EFTU1_ECOLI	P0CE47	383	Phosphothreonine	8416965	Swiss-Prot 1010711	T	Phosphorylation	REGGRTVGAGV
+EFTU2_ECOLI	P0CE48	38	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	TTVLAKTYGGA
+EFTU2_ECOLI	P0CE48	57	N6,N6-dimethyllysine; alternate	389663,2022614	Swiss-Prot 1010711	K	Methylation	NAPEEKARGIT
+EFTU2_ECOLI	P0CE48	57	N6-methyllysine; alternate	389663,2022614	Swiss-Prot 1010711	K	Methylation	NAPEEKARGIT
+EFTU2_ECOLI	P0CE48	177	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	RGSALKALEGD
+EFTU2_ECOLI	P0CE48	249	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	EIVGIKETQKS
+EFTU2_ECOLI	P0CE48	253	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	IKETQKSTCTG
+EFTU2_ECOLI	P0CE48	295	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	GQVLAKPGTIK
+EFTU2_ECOLI	P0CE48	314	N6-acetyllysine; alternate	18723842	Swiss-Prot 1010711	K	Acetylation	VYILSKDEGGR
+EFTU2_ECOLI	P0CE48	314	N6-succinyllysine; alternate	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	VYILSKDEGGR
+EFTU2_ECOLI	P0CE48	383	Phosphothreonine	8416965	Swiss-Prot 1010711	T	Phosphorylation	REGGRTVGAGV
+ELAB_ECOLI	P0AEH5	35	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	DPADQKYVELK
+ENO_ECOLI	P0A6P9	257	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	FYKDGKYVLAG
+ENVZ_ECOLI	P0AEJ4	243	Phosphohistidine; by autocatalysis	8132603	Swiss-Prot 1010711	H	Phosphorylation	MAGVSHDLRTP
+FUMB_ECOLI	P14407	192	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	GGSANKTYLYQ
+G3P1_ECOLI	P0A9B2	115	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	ITAGAKKVVMT
+G3P1_ECOLI	P0A9B2	124	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	MTGPSKDNTPM
+G3P1_ECOLI	P0A9B2	132	N6-acetyllysine; alternate	18723842	Swiss-Prot 1010711	K	Acetylation	TPMFVKGANFD
+G3P1_ECOLI	P0A9B2	132	N6-succinyllysine; alternate	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	TPMFVKGANFD
+G3P1_ECOLI	P0A9B2	138	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	GANFDKYAGQD
+G3P1_ECOLI	P0A9B2	192	N6-acetyllysine; alternate	18723842	Swiss-Prot 1010711	K	Acetylation	DGPSHKDWRGG
+G3P1_ECOLI	P0A9B2	192	N6-succinyllysine; alternate	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	DGPSHKDWRGG
+G3P1_ECOLI	P0A9B2	213	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	STGAAKAVGKV
+G3P1_ECOLI	P0A9B2	217	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	AKAVGKVLPEL
+G3P1_ECOLI	P0A9B2	225	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	PELNGKLTGMA
+G3P1_ECOLI	P0A9B2	249	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	TVRLEKAATYE
+G3P1_ECOLI	P0A9B2	249	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	TVRLEKAATYE
+G3P1_ECOLI	P0A9B2	257	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	TYEQIKAAVKA
+G3P1_ECOLI	P0A9B2	261	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	IKAAVKAAAEG
+G3P1_ECOLI	P0A9B2	331	N6-malonyllysine; alternate	21908771	Swiss-Prot 1010711	K	N6-malonyllysine	IAHISK-----
+G3P1_ECOLI	P0A9B2	331	N6-succinyllysine; alternate	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	IAHISK-----
+G6PI_ECOLI	P0A6T1	80	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	LAGAIKSMFSG
+G6PI_ECOLI	P0A6T1	228	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	RDWFLKAAGDE
+G6PI_ECOLI	P0A6T1	234	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	AAGDEKHVAKH
+GLMM_ECOLI	P31120	102	Phosphoserine; by autocatalysis	10231382,10671448	Swiss-Prot 1010711	S	Phosphorylation	IVISASHNPFY
+GLPK_ECOLI	P0A6F3	233	N6-malonyllysine	21908771	Swiss-Prot 1010711	K	N6-malonyllysine	TNIGGKGGTRI
+GLSA1_ECOLI	P77454	294	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	SVRGQKMVASV
+GLYA_ECOLI	P0A825	54	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	SQLTNKYAEGY
+GLYA_ECOLI	P0A825	62	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	EGYPGKRYYGG
+GLYA_ECOLI	P0A825	242	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	GLILAKGGSEE
+GLYA_ECOLI	P0A825	250	N6-acetyllysine; alternate	18723842	Swiss-Prot 1010711	K	Acetylation	SEELYKKLNSA
+GLYA_ECOLI	P0A825	250	N6-succinyllysine; alternate	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	SEELYKKLNSA
+GLYA_ECOLI	P0A825	277	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	KAVALKEAMEP
+GLYA_ECOLI	P0A825	285	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	MEPEFKTYQQQ
+GLYA_ECOLI	P0A825	293	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	QQQVAKNAKAM
+GLYA_ECOLI	P0A825	331	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	KNLTGKEADAA
+GLYA_ECOLI	P0A825	346	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	NITVNKNSVPN
+GLYA_ECOLI	P0A825	354	N6-acetyllysine; alternate	18723842	Swiss-Prot 1010711	K	Acetylation	VPNDPKSPFVT
+GLYA_ECOLI	P0A825	354	N6-succinyllysine; alternate	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	VPNDPKSPFVT
+GLYA_ECOLI	P0A825	375	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	TRRGFKEAEAK
+GPMA_ECOLI	P62707	18	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	ESQWNKENRFT
+GPMA_ECOLI	P62707	100	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	LQGLNKAETAE
+GPMA_ECOLI	P62707	106	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	AETAEKYGDEQ
+GRCA_ECOLI	P68066	48	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	VVAVSKLGDIE
+GRCA_ECOLI	P68066	88	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	LEDAVKHPEKY
+GRCA_ECOLI	P68066	92	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	VKHPEKYPQLT
+HDEB_ECOLI	P0AET2	93	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	KKNPQKNLYTF
+HIPA_ECOLI	P23874	150	Phosphoserine; by autocatalysis	17041039	Swiss-Prot 1010711	S	Phosphorylation	NDFRISVAGAQ
+HLDD_ECOLI	P67910	267	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	IPFPDKLKGRY
+HLDE_ECOLI	P76658	179	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	VLIDPKGTDFE
+IDH_ECOLI	P08200	100	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	YRVAIKGPLTT
+IDH_ECOLI	P08200	113	Phosphoserine	2204109	Swiss-Prot 1010711	S	Phosphorylation	GGGIRSLNVAL
+IDH_ECOLI	P08200	142	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	TPSPVKHPELT
+IDH_ECOLI	P08200	242	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	TEGAFKDWGYQ
+IF2_ECOLI	P0A705	808	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	VFKSPKFGAIA
+IMDH_ECOLI	P0ADG7	267	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	RETRAKYPDLQ
+IMDH_ECOLI	P0ADG7	428	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	YKGRLKEIIHQ
+KAD_ECOLI	P69441	192	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	EAGNTKYAKVD
+KPYK1_ECOLI	P0AD61	76	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	EIRTMKLEGGN
+KPYK1_ECOLI	P0AD61	319	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	ESAKGKYPLEA
+KPYK2_ECOLI	P21599	351	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	SINVSKHRLDV
+LEP_ECOLI	P00803	1	Blocked amino end (Met)	6311837	Swiss-Prot 1010711	M	none	-----MANMFA
+MANA_ECOLI	P00946	280	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	AGLTPKYIDIP
+MAO2_ECOLI	P76558	56	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	EKDPLKAYKYT
+MCP1_ECOLI	P02942	297	Glutamate methyl ester (Gln)	6402709	Swiss-Prot 1010711	Q	Methylation	SSRTEQQAASL
+MCP1_ECOLI	P02942	304	Glutamate methyl ester (Glu)	6402709	Swiss-Prot 1010711	E	Methylation	AASLEETAASM
+MCP1_ECOLI	P02942	311	Glutamate methyl ester (Gln)	6402709	Swiss-Prot 1010711	Q	Methylation	AASMEQLTATV
+MCP1_ECOLI	P02942	493	Glutamate methyl ester (Glu)	6402709	Swiss-Prot 1010711	E	Methylation	AALVEESAAAA
+MCP3_ECOLI	P05704	305	Glutamate methyl ester (Glu)	6300110,6374654	Swiss-Prot 1010711	E	Methylation	SSRTEEQAAAI
+MCP3_ECOLI	P05704	311	Glutamate methyl ester (Glu)	6300110	Swiss-Prot 1010711	E	Methylation	QAAAIEQTAAS
+MCP3_ECOLI	P05704	312	Glutamate methyl ester (Gln)	6300110,6374654	Swiss-Prot 1010711	Q	Methylation	AAAIEQTAASM
+MCP3_ECOLI	P05704	319	Glutamate methyl ester (Gln)	6300110,6374654	Swiss-Prot 1010711	Q	Methylation	AASMEQLTATV
+MCP3_ECOLI	P05704	501	Glutamate methyl ester (Glu)	6300110,6374654	Swiss-Prot 1010711	E	Methylation	ASLVEEASAAA
+MCP3_ECOLI	P05704	510	Glutamate methyl ester (Glu)	6300110	Swiss-Prot 1010711	E	Methylation	AAVSLEEQAAR
+METB_ECOLI	P00935	198	N6-(pyridoxal phosphate)lysine	3307782	Swiss-Prot 1010711	K	Pyridoxal phosphate	LHSCTKYLNGH
+METK_ECOLI	P0A817	3	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	---MAKHLFTS
+MTLD_ECOLI	P09424	269	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	GFDADKHAAYI
+NLPE_ECOLI	P40710	21	N-palmitoyl cysteine	7635808	Swiss-Prot 1010711	C	Palmitoylation	FTLMGCNNRAE
+NTRB_ECOLI	P0AFB5	139	Phosphohistidine; by autocatalysis	2016302	Swiss-Prot 1010711	H	Phosphorylation	VRGLAHEIKNP
+ODO2_ECOLI	P0AFG6	148	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	REDVEKHLAKA
+ODP1_ECOLI	P0AFG8	716	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	RKGIYKLETIE
+ODP2_ECOLI	P06959	396	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	KVDFSKFGEIE
+OSMC_ECOLI	P0C0L2	16	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	WEGDIKRGKGT
+PCKA_ECOLI	P22259	87	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	FWWADKGKGKN
+PCKA_ECOLI	P22259	523	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	IDNFDKYTDTP
+PEPD_ECOLI	P15288	296	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	LAEKEKNLALL
+PFLB_ECOLI	P09373	63	N6-acetyllysine; alternate	18723842	Swiss-Prot 1010711	K	Acetylation	VMEGVKLENRT
+PFLB_ECOLI	P09373	63	N6-succinyllysine; alternate	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	VMEGVKLENRT
+PFLB_ECOLI	P09373	107	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	TEAPLKRALIP
+PFLB_ECOLI	P09373	117	N6-acetyllysine; alternate	18723842	Swiss-Prot 1010711	K	Acetylation	PFGGIKMIEGS
+PFLB_ECOLI	P09373	117	N6-succinyllysine; alternate	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	PFGGIKMIEGS
+PFLB_ECOLI	P09373	124	N6-succinyllysine; alternate	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	IEGSCKAYNRE
+PFLB_ECOLI	P09373	195	N6-acetyllysine; alternate	18723842	Swiss-Prot 1010711	K	Acetylation	IDYLMKDKLAQ
+PFLB_ECOLI	P09373	195	N6-succinyllysine; alternate	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	IDYLMKDKLAQ
+PFLB_ECOLI	P09373	454	N6-acetyllysine; alternate	18723842	Swiss-Prot 1010711	K	Acetylation	GGVDEKLKMQV
+PFLB_ECOLI	P09373	454	N6-succinyllysine; alternate	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	GGVDEKLKMQV
+PFLB_ECOLI	P09373	467	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	KSEPIKGDVLN
+PFLB_ECOLI	P09373	541	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	SLSAIKYAKVK
+PFLB_ECOLI	P09373	591	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	MKKIQKLHTYR
+PFLB_ECOLI	P09373	654	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	LTSVAKLPFAY
+PGK_ECOLI	P0A799	84	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	NYLKDKLSNPV
+PHSM_ECOLI	P00490	251	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	GINAEKLTKVL
+PIL1_ECOLI	P04737	52	N-acetylalanine	6090426	Swiss-Prot 1010711	A	Acetylation	QLAMAAGSSGQ
+PTNAB_ECOLI	P69797	55	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	NAQLAKLDTTK
+PTNAB_ECOLI	P69797	234	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	VYNNPKYAGER
+PUR8_ECOLI	P0AB89	94	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	TNHDVKAVEYF
+PUR8_ECOLI	P0AB89	366	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	LKGVSKLEVNR
+PUR9_ECOLI	P15639	287	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	ACVIVKHANPC
+PURT_ECOLI	P33221	179	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	LAQAWKYAQQG
+RAIA_ECOLI	P0AD49	66	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	LVASGKHEDMY
+RF1_ECOLI	P0A7I0	235	N5-methylglutamine	11118225,11847124	Swiss-Prot 1010711	Q	Methylation	SGAGGQHVNTT
+RF2_ECOLI	P07012	252	N5-methylglutamine	11118225,11847124	Swiss-Prot 1010711	Q	Methylation	SGAGGQHVNRT
+RIR1_ECOLI	P00452	283	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	CIPFYKHFQTA
+RL1_ECOLI	P0A7L0	105	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	LADQIKKGEMN
+RL1_ECOLI	P0A7L0	154	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	VAEAVKNAKAG
+RL1_ECOLI	P0A7L0	186	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	DADKLKENLEA
+RL1_ECOLI	P0A7L0	197	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	LLVALKKAKPT
+RL10_ECOLI	P0A7J3	37	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	GVTVDKMTELR
+RL10_ECOLI	P0A7J3	105	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	AKANAKFEVKA
+RL11_ECOLI	P0A7J7	72	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	FTFVTKTPPAA
+RL11_ECOLI	P0A7J7	81	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	AAVLLKKAAGI
+RL2_ECOLI	P60422	242	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	GRNFGKHPVTP
+RL3_ECOLI	P60438	38	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	RVTQVKDLAND
+RL3_ECOLI	P60438	150	N5-methylglutamine	365579	Swiss-Prot 1010711	Q	Methylation	SIGQNQTPGKV
+RL31_ECOLI	P0A7M9	8	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	KDIHPKYEEIT
+RL5_ECOLI	P62399	3	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	---MAKLHDYY
+RL6_ECOLI	P0AG55	44	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	DAVEVKHADNT
+RL7_ECOLI	P0A7K2	2	N-acetylserine; in L7	4573678	Swiss-Prot 1010711	S	Acetylation	----MSITKDQ
+RL7_ECOLI	P0A7K2	82	N6-methyllysine; partial	4573678	Swiss-Prot 1010711	K	Methylation	TGLGLKEAKDL
+RL9_ECOLI	P0A7R1	71	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	NARAEKINALE
+RL9_ECOLI	P0A7R1	83	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	VTIASKAGDEG
+RL9_ECOLI	P0A7R1	89	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	AGDEGKLFGSI
+RL9_ECOLI	P0A7R1	112	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	GVEVAKSEVRL
+RNR_ECOLI	P21499	544	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	LLRSMKQAIYD
+RPOB_ECOLI	P0A8V2	1022	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	QYDELKHEFEK
+RPOB_ECOLI	P0A8V2	1200	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	IKELLKLGDLP
+RPOC_ECOLI	P0A8T7	983	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	RNTELKLIDEF
+RRF_ECOLI	P0A805	162	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	QDDVQKLTDAA
+RS1_ECOLI	P0AG67	229	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	AWKRVKHPSEI
+RS1_ECOLI	P0AG67	279	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	YPEGTKLTGRV
+RS1_ECOLI	P0AG67	363	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	AETHNKGDRVE
+RS12_ECOLI	P0A7S3	108	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	DCSGVKDRKQA
+RS2_ECOLI	P0A7V0	115	N6-succinyllysine	21151122	Swiss-Prot 1010711	K	N6-succinyllysine	SIKRLKDLETQ
+RS5_ECOLI	P0A7W1	2	N-acetylalanine	363452	Swiss-Prot 1010711	A	Acetylation	----MAHIEKQ
+RS6_ECOLI	P02358	93	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	MVMRTKHAVTE
+SODF_ECOLI	P0AGD3	51	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	TAFEGKSLEEI
+SYA_ECOLI	P00957	74	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	VRAGGKHNDLE
+SYI_ECOLI	P00956	183	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	LHKGAKPVHWC
+SYK2_ECOLI	P0A8N5	114	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	YNDQFKKWDLG
+SYK2_ECOLI	P0A8N5	156	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	RPLPDKFHGLQ
+SYT_ECOLI	P0A8M3	286	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	VRSKLKEYQYQ
+SYY_ECOLI	P0AGJ9	144	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	LRDIGKHFSVN
+TABA_ECOLI	P0AF96	36	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	ETPKGKHDIEG
+THIO_ECOLI	P0AA25	70	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	PGTAPKYGIRG
+TKT1_ECOLI	P27302	46	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	WRDFLKHNPQN
+TKT2_ECOLI	P33570	342	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	EKTTQKYINEL
+TNAA_ECOLI	P0A853	5	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	-MENFKHLPEP
+TNAA_ECOLI	P0A853	115	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	IPVLIKKREQE
+TNAA_ECOLI	P0A853	156	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	RNVYIKEAFDT
+TNAA_ECOLI	P0A853	450	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	NAANIKGLTFT
+WRBA_ECOLI	P0A8G6	50	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	PQLFEKAGGKT
+YCEH_ECOLI	P29217	80	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	GNRVTKYEQRF
+YCJX_ECOLI	P76046	249	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	LAQADKHTNAG
+YGHA_ECOLI	P0AG84	39	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	PDCGEKTYVGS
+YHBJ_ECOLI	P0A894	251	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	GCTGGKHRSVY
+YIBN_ECOLI	P0AG27	91	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	VGELEKHKDKP
+YIFE_ECOLI	P0ADN2	15	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	RYFDNKHYPRG
+ZAPB_ECOLI	P0AF36	10	N6-acetyllysine	18723842	Swiss-Prot 1010711	K	Acetylation	LEVFEKLEAKV
+ACP_ECOLI	P0A6A8	37	O-(pantetheine 4'-phosphoryl)serine		Swiss-Prot 1010711	S	Phosphopantetheine	DLGADSLDTVE
+ADIA_ECOLI	P28629	386	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	THSTHKLLNAL
+AMO_ECOLI	P46883	496	2',4',5'-topaquinone		Swiss-Prot 1010711	Y	TPQ	STVGNYDYIFD
+ARCB_ECOLI	P0AEC3	292	Phosphohistidine; by autocatalysis		Swiss-Prot 1010711	H	Phosphorylation	ISTISHELRTP
+ATPL_ECOLI	P68699	1	N-formylmethionine		Swiss-Prot 1010711	M	Formylation	-----MENLNM
+BAMC_ECOLI	P0A903	25	N-palmitoyl cysteine		Swiss-Prot 1010711	C	Palmitoylation	LLLAACSSDSR
+BAMC_ECOLI	P0A903	25	S-diacylglycerol cysteine		Swiss-Prot 1010711	C	Lipoprotein	LLLAACSSDSR
+BCCP_ECOLI	P0ABD8	122	N6-biotinyllysine		Swiss-Prot 1010711	K	Biotin	IVEAMKMMNQI
+BIOA_ECOLI	P12995	274	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	ILCLGKALTGG
+BIOF_ECOLI	P12998	236	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	VVTFGKGFGVS
+CHEA_ECOLI	P07363	48	Phosphohistidine; by autocatalysis		Swiss-Prot 1010711	H	Phosphorylation	IFRAAHSIKGG
+CYDA_ECOLI	P0ABJ9	1	N-formylmethionine		Swiss-Prot 1010711	M	Formylation	-----MLDIVE
+CYDB_ECOLI	P0ABK2	1	N-formylmethionine		Swiss-Prot 1010711	M	Formylation	-----MIDYEV
+CYSM_ECOLI	P16703	41	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	PAGSVKDRAAL
+DCDA_ECOLI	P00861	54	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	VRFAQKACSNI
+DCEA_ECOLI	P69908	276	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	SASGHKFGLAP
+DCEB_ECOLI	P69910	276	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	SASGHKFGLAP
+DCLZ_ECOLI	P52095	367	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	TQSTHKMLAAL
+DHAS_ECOLI	P0A9Q9	135	S-cysteinyl cysteine; in inhibited form		Swiss-Prot 1010711	C	none	FVGGNCTVSLM
+DHSA_ECOLI	P0AC41	45	Tele-8alpha-FAD histidine		Swiss-Prot 1010711	H	FAD	FPTRSHTVSAQ
+EFTU1_ECOLI	P0CE47	2	N-acetylserine		Swiss-Prot 1010711	S	Acetylation	----MSKEKFE
+EFTU2_ECOLI	P0CE48	2	N-acetylserine		Swiss-Prot 1010711	S	Acetylation	----MSKEKFE
+ERA_ECOLI	P06616	36	Phosphothreonine; by autocatalysis		Swiss-Prot 1010711	T	Phosphorylation	QKISITSRKAQ
+ERA_ECOLI	P06616	37	Phosphoserine; by autocatalysis		Swiss-Prot 1010711	S	Phosphorylation	KISITSRKAQT
+FRDA_ECOLI	P00363	45	Tele-8alpha-FAD histidine		Swiss-Prot 1010711	H	FAD	YPMRSHTVAAE
+GABT_ECOLI	P22256	268	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	LTTFAKSIAGG
+GLNA_ECOLI	P0A9C5	398	O-AMP-tyrosine		Swiss-Prot 1010711	Y	Nucleotide-binding	MDKNLYDLPPE
+GLNB_ECOLI	P0A9Z1	51	O-UMP-tyrosine		Swiss-Prot 1010711	Y	Nucleotide-binding	YRGAEYMVDFL
+GLYA_ECOLI	P0A825	229	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	TTTTHKTLAGP
+HEM3_ECOLI	P06983	242	S-(dipyrrolylmethanemethyl)cysteine		Swiss-Prot 1010711	C	none	RLEGGCQVPIG
+HIS8_ECOLI	P06986	214	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	LRTLSKAFALA
+IADA_ECOLI	P39377	162	N6-carboxylysine		Swiss-Prot 1010711	K	N6-carboxylysine	RVIGVKCAISD
+IF3_ECOLI	P0A707	1	N-methylmethionine; in Translationinitiation factor IF-3; alternate		Swiss-Prot 1010711	M	Methylation	-----MKGGKR
+ILVA_ECOLI	P04968	62	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	PVHSFKLRGAY
+ILVE_ECOLI	P0AB80	160	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	IPTAAKAGGNY
+ISCS_ECOLI	P0A6B7	206	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	SFSGHKIYGPK
+KBL_ECOLI	P0AB77	244	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	TGTLGKALGGA
+LACY_ECOLI	P02920	1	N-formylmethionine; partial		Swiss-Prot 1010711	M	Formylation	-----MYYLKN
+LDCI_ECOLI	P0A9H3	367	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	TQSTHKLLAAF
+LOLB_ECOLI	P61320	22	N-palmitoyl cysteine		Swiss-Prot 1010711	C	Palmitoylation	LVLTACSVTTP
+LOLB_ECOLI	P61320	22	S-diacylglycerol cysteine		Swiss-Prot 1010711	C	Lipoprotein	LVLTACSVTTP
+LPP_ECOLI	P69776	1	N-formylmethionine		Swiss-Prot 1010711	M	Formylation	-----MKATKL
+LPP_ECOLI	P69776	21	N-palmitoyl cysteine		Swiss-Prot 1010711	C	Palmitoylation	TLLAGCSSNAK
+LPP_ECOLI	P69776	21	S-diacylglycerol cysteine		Swiss-Prot 1010711	C	Lipoprotein	TLLAGCSSNAK
+LPP_ECOLI	P69776	78	N6-murein peptidoglycan lysine		Swiss-Prot 1010711	K	Peptidoglycan-anchor	ATKYRK-----
+MALY_ECOLI	P23256	233	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	LTSGSKSFNIP
+MCP1_ECOLI	P02942	502	Glutamate methyl ester (Glu)		Swiss-Prot 1010711	E	Methylation	AAAALEEQASR
+MCP2_ECOLI	P07017	295	Glutamate methyl ester (Gln)		Swiss-Prot 1010711	Q	Methylation	SSRTEQQASAL
+MCP2_ECOLI	P07017	302	Glutamate methyl ester (Glu)		Swiss-Prot 1010711	E	Methylation	ASALEETAASM
+MCP2_ECOLI	P07017	309	Glutamate methyl ester (Gln)		Swiss-Prot 1010711	Q	Methylation	AASMEQLTATV
+MCP2_ECOLI	P07017	491	Glutamate methyl ester (Glu)		Swiss-Prot 1010711	E	Methylation	ASLVQESAAAA
+MCP4_ECOLI	P07018	293	Glutamate methyl ester (Gln)		Swiss-Prot 1010711	Q	Methylation	SSRTEQQAASL
+MCP4_ECOLI	P07018	300	Glutamate methyl ester (Gln)		Swiss-Prot 1010711	Q	Methylation	AASLAQTAASM
+MCP4_ECOLI	P07018	307	Glutamate methyl ester (Gln)		Swiss-Prot 1010711	Q	Methylation	AASMEQLTATV
+MCP4_ECOLI	P07018	489	Glutamate methyl ester (Glu)		Swiss-Prot 1010711	E	Methylation	ASLVEEAAVAT
+METC_ECOLI	P06721	210	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	IQAATKYLVGH
+MOAD_ECOLI	P30748	81	1-thioglycine; alternate		Swiss-Prot 1010711	G	none	PPVTGG-----
+MOAD_ECOLI	P30748	81	Glycyl adenylate; alternate		Swiss-Prot 1010711	G	Nucleotide-binding	PPVTGG-----
+MTOX_ECOLI	P40874	308	S-8alpha-FAD cysteine		Swiss-Prot 1010711	C	FAD	LYGAACTYDNS
+MURA_ECOLI	P0A749	115	2-(S-cysteinyl)pyruvic acid O-phosphothioketal		Swiss-Prot 1010711	C	none	SLPGGCTIGAR
+MURE_ECOLI	P22188	225	N6-carboxylysine		Swiss-Prot 1010711	K	N6-carboxylysine	HYEAAKWLLYS
+NARI_ECOLI	P11350	1	N-formylmethionine		Swiss-Prot 1010711	M	Formylation	-----MQFLNM
+NDK_ECOLI	P0A763	119	Phosphoserine		Swiss-Prot 1010711	S	Phosphorylation	NGTHGSDSVES
+NDK_ECOLI	P0A763	121	Phosphoserine		Swiss-Prot 1010711	S	Phosphorylation	THGSDSVESAA
+NLPA_ECOLI	P04846	24	S-diacylglycerol cysteine		Swiss-Prot 1010711	C	Lipoprotein	ILLAGCDQSSS
+NLPD_ECOLI	P0ADA3	26	N-palmitoyl cysteine		Swiss-Prot 1010711	C	Palmitoylation	LWLAGCSDTSN
+NLPD_ECOLI	P0ADA3	26	S-diacylglycerol cysteine		Swiss-Prot 1010711	C	Lipoprotein	LWLAGCSDTSN
+NLPI_ECOLI	P0AFB1	19	N-palmitoyl cysteine		Swiss-Prot 1010711	C	Palmitoylation	LTLAGCSNTSW
+NLPI_ECOLI	P0AFB1	19	S-diacylglycerol cysteine		Swiss-Prot 1010711	C	Lipoprotein	LTLAGCSNTSW
+ODO2_ECOLI	P0AFG6	44	N6-lipoyllysine		Swiss-Prot 1010711	K	Lipoyl	EIETDKVVLEV
+ODP2_ECOLI	P06959	41	N6-lipoyllysine		Swiss-Prot 1010711	K	Lipoyl	TVEGDKASMEV
+ODP2_ECOLI	P06959	144	N6-lipoyllysine		Swiss-Prot 1010711	K	Lipoyl	TVEGDKASMEV
+ODP2_ECOLI	P06959	245	N6-lipoyllysine		Swiss-Prot 1010711	K	Lipoyl	TVEGDKASMEV
+OMPR_ECOLI	P0AA16	55	4-aspartylphosphate		Swiss-Prot 1010711	D	Phosphorylation	HLMVLDLMLPG
+OXYR_ECOLI	P0ACQ4	199	Cysteine sulfenic acid (-SOH); alternate		Swiss-Prot 1010711	C	Oxidation	LEDGHCLRDQA
+OXYR_ECOLI	P0ACQ4	199	S-glutathionyl cysteine; alternate		Swiss-Prot 1010711	C	Glutathionylation	LEDGHCLRDQA
+OXYR_ECOLI	P0ACQ4	199	S-nitrosocysteine; alternate		Swiss-Prot 1010711	C	S-nitrosylation	LEDGHCLRDQA
+PABC_ECOLI	P28305	140	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	HLAGIKHLNRL
+PAL_ECOLI	P0A912	22	N-palmitoyl cysteine		Swiss-Prot 1010711	C	Palmitoylation	MAIAACSSNKN
+PAL_ECOLI	P0A912	22	S-diacylglycerol cysteine		Swiss-Prot 1010711	C	Lipoprotein	MAIAACSSNKN
+PAND_ECOLI	P0A790	25	Pyruvic acid (Ser)		Swiss-Prot 1010711	S	Pyruvate	LHYEGSCAIDQ
+PFLB_ECOLI	P09373	124	N6-acetyllysine; alternate		Swiss-Prot 1010711	K	Acetylation	IEGSCKAYNRE
+PFLB_ECOLI	P09373	735	Glycine radical		Swiss-Prot 1010711	G	Organic radical	TIRVSGYAVRF
+PHOB_ECOLI	P0AFJ5	53	4-aspartylphosphate		Swiss-Prot 1010711	D	Phosphorylation	DLILLDWMLPG
+PHSM_ECOLI	P00490	646	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	GTGNMKLALNG
+PSD_ECOLI	P0A8K1	1	N-formylmethionine		Swiss-Prot 1010711	M	Formylation	-----MLNSFK
+PSD_ECOLI	P0A8K1	254	Pyruvic acid (Ser)		Swiss-Prot 1010711	S	Pyruvate	RFKLGSTVINL
+PYRC_ECOLI	P05020	103	N6-carboxylysine		Swiss-Prot 1010711	K	N6-carboxylysine	VFTAAKLYPAN
+RCSD_ECOLI	P39838	842	Phosphohistidine		Swiss-Prot 1010711	H	Phosphorylation	LAQTAHRLKGV
+RL11_ECOLI	P0A7J7	2	N,N,N-trimethylalanine		Swiss-Prot 1010711	A	Methylation	----MAKKVQA
+RL11_ECOLI	P0A7J7	4	N6,N6,N6-trimethyllysine		Swiss-Prot 1010711	K	Methylation	--MAKKVQAYV
+RL11_ECOLI	P0A7J7	40	N6,N6,N6-trimethyllysine		Swiss-Prot 1010711	K	Methylation	IMEFCKAFNAK
+RL16_ECOLI	P0ADY7	1	N-methylmethionine		Swiss-Prot 1010711	M	Methylation	-----MLQPKR
+RL16_ECOLI	P0ADY7	81	Arginine derivative		Swiss-Prot 1010711	R	none	KPLAVRMGKGK
+RL33_ECOLI	P0A7N9	2	N-methylalanine		Swiss-Prot 1010711	A	Methylation	----MAKGIRE
+RLPA_ECOLI	P10100	18	N-palmitoyl cysteine		Swiss-Prot 1010711	C	Palmitoylation	GMLAACTSDDG
+RLPA_ECOLI	P10100	18	S-diacylglycerol cysteine		Swiss-Prot 1010711	C	Lipoprotein	GMLAACTSDDG
+RS11_ECOLI	P0A7R9	2	N-methylalanine		Swiss-Prot 1010711	A	Methylation	----MAKAPIR
+RS12_ECOLI	P0A7S3	89	3-methylthioaspartic acid		Swiss-Prot 1010711	D	none	GGRVKDLPGVR
+RS18_ECOLI	P0A7T7	2	N-acetylalanine		Swiss-Prot 1010711	A	Acetylation	----MARYFRR
+SDHD_ECOLI	P00926	118	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	ISGSIKARGGI
+SELA_ECOLI	P0A821	295	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	SFSGDKLLGGP
+SERC_ECOLI	P23721	198	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	YAGAQKNIGPA
+SLP_ECOLI	P37194	19	N-palmitoyl cysteine		Swiss-Prot 1010711	C	Palmitoylation	FLLAACSSIPQ
+SLP_ECOLI	P37194	19	S-diacylglycerol cysteine		Swiss-Prot 1010711	C	Lipoprotein	FLLAACSSIPQ
+SPED_ECOLI	P0A7F6	112	Pyruvic acid (Ser); by autocatalysis		Swiss-Prot 1010711	S	Pyruvate	AHLDKSHICVH
+SUFS_ECOLI	P77444	226	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	VFSGHKLYGPT
+TAMB_ECOLI	P39321	1	N-formylmethionine		Swiss-Prot 1010711	M	Formylation	-----MSLWKK
+TAUD_ECOLI	P37610	128	3-hydroxytryptophan; by autocatalysis		Swiss-Prot 1010711	W	Hydroxylation	GGDTLWTSGIA
+TAUD_ECOLI	P37610	240	3-hydroxytryptophan; by autocatalysis		Swiss-Prot 1010711	W	Hydroxylation	QVRWRWQPNDI
+TAUD_ECOLI	P37610	248	3-hydroxytryptophan; by autocatalysis		Swiss-Prot 1010711	W	Hydroxylation	NDIAIWDNRVT
+THIS_ECOLI	O32583	66	1-thioglycine; alternate		Swiss-Prot 1010711	G	none	QVIAGG-----
+THIS_ECOLI	O32583	66	Glycyl adenylate; alternate		Swiss-Prot 1010711	G	Nucleotide-binding	QVIAGG-----
+TNAA_ECOLI	P0A853	270	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	AMSAKKDAMVP
+TRAV_ECOLI	P41069	19	S-diacylglycerol cysteine		Swiss-Prot 1010711	C	Lipoprotein	LLLYGCAGTST
+TYRB_ECOLI	P04693	247	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	SNSFSKIFSLY
+YAJL_ECOLI	Q46948	106	Cysteine sulfinic acid (-SO2H)		Swiss-Prot 1010711	C	Oxidation	IVAAICAAPAT
+YBDL_ECOLI	P77806	236	N6-(pyridoxal phosphate)lysine		Swiss-Prot 1010711	K	Pyridoxal phosphate	VSSFGKTYHMT
+CATE_ECOLI	P21179	392	3'-histidyl-3-tyrosine (His-Tyr)		Swiss-Prot 1010711	H	none	EQAAFHPGHIV
+THIF_ECOLI	P30138	184	Glycyl cysteine dithioester (Cys-Gly) (interchain with G-...) (interchain with G-Cter in ThiS)		Swiss-Prot 1010711	C	Thioester bond	EPERNCRTAGV
+THIS_ECOLI	O32583	66	Glycyl cysteine dithioester (Cys-Gly) (interchain with G-...) (interchain with C-184 in thiF); alter		Swiss-Prot 1010711	G	Thioester bond	QVIAGG-----
+MOAD_ECOLI	P30748	81	Glycyl lysine isopeptide (Gly-Lys) (interchain with K-...) (interchain with K-119 in moaE)		Swiss-Prot 1010711	G	Isopeptide bond	PPVTGG-----
+MOAE_ECOLI	P30749	119	Glycyl lysine isopeptide (Lys-Gly) (interchain with G-Cter in moaD)		Swiss-Prot 1010711	K	none	IMDYLKTRAPF
+KATG_ECOLI	P13029	105	Tryptophyl-tyrosyl-methioninium (Trp-Tyr) (with M-...) (with M-252)		Swiss-Prot 1010711	W	Tryptophyl-tyrosyl-methioninium	FIRMAWHGAGT
+KATG_ECOLI	P13029	226	Tryptophyl-tyrosyl-methioninium (Tyr-Met) (with W-...) (with W-105)		Swiss-Prot 1010711	Y	Tryptophyl-tyrosyl-methioninium	EMGLIYVNPEG
+ACON2_ECOLI	P36683	77	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	AKGEAKSPLLT
+ARLY_ECOLI	P11447	95	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	GKLIDKVGQLG
+BASR_ECOLI	P30843	70	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	RIRQKKYTLPV
+BASR_ECOLI	P30843	164	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	SRLMLKAGSPV
+CH60_ECOLI	P0A6F5	65	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	IELEDKFENMG
+CH60_ECOLI	P0A6F5	168	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	AEAMDKVGKEG
+CH60_ECOLI	P0A6F5	321	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	DLGQAKRVVIN
+CSPC_ECOLI	P0A9Y6	9	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	IKGQVKWFNES
+DAPD_ECOLI	P0A9D8	100	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	EARFQKEGFRV
+DNAK_ECOLI	P0A6Y8	635	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	EFEEVKDKK--
+DNAK_ECOLI	P0A6Y8	637	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	EEVKDKK----
+DPS_ECOLI	P0ABT2	105	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	SKTPLKSYPLD
+DUT_ECOLI	P06968	15	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	DPRVGKEFPLP
+EX3_ECOLI	P09030	141	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	LETELKRDNPV
+FENR_ECOLI	P28861	135	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	DLDRFKNLVLV
+FKBB_ECOLI	P0A9L3	93	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	LEENAKKEGVN
+FRMA_ECOLI	P25437	13	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	AFAPGKPLEIV
+G3P1_ECOLI	P0A9B2	249	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	TVRLEKAATYE
+GRPE_ECOLI	A0R2V7	362	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	20094657,20631680	PupDB 1.0	K	Isopeptide bond	ADGFVKRDAGL
+GRPE_ECOLI	P09372	43	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	DPRDEKVANLE
+GRPE_ECOLI	P09372	66	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	GILRVKAEMEN
+GUAA_ECOLI	P04079	437	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	IEELRKADLYD
+IDH_ECOLI	P08200	4	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	--MESKVVVPA
+IDH_ECOLI	P08200	273	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	NPNTGKEIVIK
+KAD_ECOLI	P69441	47	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	GSELGKQAKDI
+KAD_ECOLI	P69441	50	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	LGKQAKDIMDA
+KAD_ECOLI	P69441	136	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	RVYHVKFNPPK
+KAD_ECOLI	P69441	141	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	KFNPPKVEGKD
+KDSA_ECOLI	P0A715	79	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	LEEGMKIFQEL
+KPYK2_ECOLI	P21599	60	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	REIAAKLGRHV
+KPYK2_ECOLI	P21599	93	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	LNIGDKFLLDA
+LUXS_ECOLI	P45578	163	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	ELALPKEKLQE
+MTOX_ECOLI	P40874	357	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	DFAQDKKSDFD
+NAGZ_ECOLI	P75949	283	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	VCNNRKGAVSV
+NFNB_ECOLI	P38489	21	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	FDASKKLTPEQ
+NFNB_ECOLI	P38489	62	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	KARVAKSAAGN
+ODP2_ECOLI	P06959	161	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	TVKEIKVNVGD
+PPIB_ECOLI	P23869	60	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	FEPGMKQKATK
+PRET_ECOLI	P76440	364	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	QRNTIKTQNYQ
+PT1_ECOLI	P08839	174	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	AQLNLKKVLGF
+RDGB_ECOLI	P52061	3	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	---MQKVVLAT
+RF2_ECOLI	P07012	162	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	ESRGFKTEIIE
+RL15_ECOLI	P02413	141	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	EAAGGKIEE--
+RL25_ECOLI	P68919	34	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	IIYGGKEAPLA
+RMLD_ECOLI	P37760	245	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	PLALNKLNAVP
+RS4_ECOLI	P0A7V8	156	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	KQSRVKAALEL
+RS4_ECOLI	P0A7V8	167	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	AEQREKPTWLE
+RS6_ECOLI	P02358	35	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	TGAEGKIHRLE
+RS7_ECOLI	P02359	56	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	AQRSGKSELEA
+RS7_ECOLI	P02359	131	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	DAAENKGTAVK
+SODF_ECOLI	P0AGD3	44	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	LNNLIKGTAFE
+SYE_ECOLI	P04805	284	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	REEMIKYFTLN
+SYGB_ECOLI	P00961	624	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	VVLRDKLEPYF
+SYI_ECOLI	P00956	814	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	WDELLKVRGEV
+SYP_ECOLI	P16659	426	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	YSEALKASVQG
+SYP_ECOLI	P16659	495	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	QELAEKLYSEL
+SYP_ECOLI	P16659	571	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	LVKQIKG----
+TKT1_ECOLI	P27302	316	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	FAAYAKAYPQE
+TKT1_ECOLI	P27302	347	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	KEFIAKLQANP
+TNAA_ECOLI	P0A853	156	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	RNVYIKEAFDT
+YBBN_ECOLI	P77395	172	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	AEAVLKTIPLQ
+YBBN_ECOLI	P77395	256	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	DGQTRKTFQEI
+YCCU_ECOLI	P75874	70	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	ADVPEKVDMVD
+YDHR_ECOLI	P0ACX3	60	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	LFTDEKSALAY
+YDHR_ECOLI	P0ACX3	74	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	HTARLKNLGVE
+YEBC_ECOLI	P0A8A0	192	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	EAAGLKADSAE
+YICC_ECOLI	P23839	86	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	NEKLAKQLVTA
+YIHI_ECOLI	P0A8H6	158	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	EEEDEKQEDMM
+YJHC_ECOLI	P39353	79	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	KEPVIKAAKNK
+YQHD_ECOLI	Q46856	43	Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-...)	21738222	PupDB 1.0	K	Isopeptide bond	GGSVKKTGVLD
+AK1H_ECOLI	P00561	280	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	QFQIPCLIKNT
+AK1H_ECOLI	P00561	501	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	IDLRVCGVANS
+AROF_ECOLI	P00888	250	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	ADVAQCEKEME
+DAPA_ECOLI	P0A6L2	218	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	DMAQMCKLAAE
+DCUP_ECOLI	P29680	50	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	DFMSLCKNAEL
+DEOB_ECOLI	P0A6K6	267	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	DIYANCGITKK
+DHSB_ECOLI	P07014	75	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	KNGLACITPIS
+DLDH_ECOLI	P0A9P0	392	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	AIASDCADGMT
+G6PD_ECOLI	P0AC53	10	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	QTAQACDLVIF
+GATY_ECOLI	P0C8J6	124	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	EVVDFCHRFDV
+GATZ_ECOLI	P0C8J8	149	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	RAAVLCFAAES
+GATZ_ECOLI	P0C8J8	159	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	SVATDCQREQL
+GLPB_ECOLI	P13033	284	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	VKKVTCKNGVV
+GRCA_ECOLI	P68066	31	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	KGEARCIVAKA
+ILVB_ECOLI	P08142	298	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	KTEQFCPNAKI
+ILVC_ECOLI	P05793	45	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	VVIVGCGAQGL
+MREB_ECOLI	P0A9X4	113	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	PRVLVCVPVGA
+NAPA_ECOLI	P33937	67	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	GRVVACQGDPD
+NFSA_ECOLI	P17117	9	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	TIELICGHRSI
+NRDD_ECOLI	P28903	466	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	YMEGACGVRLN
+NUOB_ECOLI	P0AFC7	102	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	VVAGTCFTKMA
+OXYR_ECOLI	P0ACQ4	199	S-nitrosocysteine	14993439,15688001,12015987	dbSNO 1.0	C	S-nitrosylation	LEDGHCLRDQA
+PFLB_ECOLI	P09373	123	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	MIEGSCKAYNR
+PT1_ECOLI	P08839	324	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	AVAEACGSQAV
+RL17_ECOLI	P0AG44	100	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	TRILKCGFRAG
+RL2_ECOLI	P60422	6	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	MAVVKCKPTSP
+RL2_ECOLI	P60422	188	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	KVEADCRATLG
+RL27_ECOLI	P0A7L8	53	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	GANVGCGRDHT
+RL28_ECOLI	P0A7M2	5	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	-MSRVCQVTGK
+RL31_ECOLI	P0A7M9	16	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	EITASCSCGNV
+RL31_ECOLI	P0A7M9	18	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	TASCSCGNVMK
+RL31_ECOLI	P0A7M9	37	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	LNLDVCSKCHP
+RL35_ECOLI	P0A7Q1	61	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	GLVIACLPYA-
+RPOA_ECOLI	P0A7Z4	176	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	LLVDACYSPVE
+RS12_ECOLI	P0A7S3	27	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	PALEACPQKRG
+RS4_ECOLI	P0A7V8	32	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	AIDTKCKIEQA
+SUCD_ECOLI	P0AGE9	124	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	MIGPNCPGVIT
+TNAA_ECOLI	P0A853	298	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	ECRTLCVVQEG
+TPX_ECOLI	P0A862	82	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	NTVVLCISADL
+TYPA_ECOLI	P32132	537	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	DLTVNCLTGKK
+YDFZ_ECOLI	P64463	52	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	VVVEGCEEKLA
+YEAO_ECOLI	P76243	5	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	-MNIQCKRVYD
+YHES_ECOLI	P63389	602	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	AELTACLQQQA
+YKGE_ECOLI	P77252	9	S-nitrosocysteine	19483679	dbSNO 1.0	C	S-nitrosylation	NFFVTCIGDAL
