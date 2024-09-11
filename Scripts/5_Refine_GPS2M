@@ -1,3 +1,6 @@
+#Let's start to make some plots
+#Let's start by making a smaller dataset to use for Figure 1 and Supplementary Figure 1
+import pandas as pd
 ###METAL BINDING
 import pandas as pd
 def merge_datasets_in_chunks(metal_binding_path, master_annotation_path, chunksize=10000):
