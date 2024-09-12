@@ -98,6 +98,94 @@ cbar.yaxis.label.set_weight('bold')
 output_figure_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp1\\B_amino_acid_metal_interaction_counts_clustermap.png"
 plt.savefig(output_figure_path, bbox_inches='tight', pad_inches=0.1)
 
+
+#Next, we should analyze protein domains
+import pandas as pd
+import re
+
+# Function to extract and expand domain information
+def expand_domain_info(df, metal_type_column='Metal_type'):
+    expanded_rows = []
+    for _, row in df.iterrows():
+        metal_type = row[metal_type_column]
+        domains = row['Domains']
+        if pd.isna(domains) or domains.strip() == '':
+            expanded_rows.append([metal_type, 'NA'])
+        else:
+            # Extract and split the domains based on '/note='
+            domain_notes = re.findall(r'/note="([^"]+)"', domains)
+            for note in domain_notes:
+                expanded_rows.append([metal_type, note])
+    return pd.DataFrame(expanded_rows, columns=[metal_type_column, 'Domains'])
+# Function to process the metal-binding dataset
+def process_metal_binding(file_path):
+    df = pd.read_csv(file_path, usecols=['Metal_type', 'Domains'])
+    return expand_domain_info(df)
+# Function to process the non-metal binding dataset
+def process_non_metal_binding(file_path):
+    df = pd.read_csv(file_path, usecols=['Domains'])
+    df['Metal_type'] = 'non-metal'  # Assign 'non-metal' to each row
+    return expand_domain_info(df, metal_type_column='Metal_type')
+
+# Process both datasets
+metal_binding_data = process_metal_binding('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_metals_final.csv')
+non_metal_binding_data = process_non_metal_binding('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_nonmetal.csv')
+
+# Combine both datasets
+combined_data = pd.concat([metal_binding_data, non_metal_binding_data])
+
+# Save the combined dataset with a unique filename
+combined_data.to_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\metal_nonmetal_protein_domains.csv', index=False)
+
+print("Data processing completed. The expanded data is saved to metal_nonmetal_protein_domains.csv")
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the protein domain data
+protein_domain_df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\metal_nonmetal_protein_domains.csv')
+
+# Replace missing values in 'Domains' with 'NA'
+protein_domain_df['Domains'] = protein_domain_df['Domains'].fillna('NA')
+
+# Aggregate the data by 'Metal_type' and 'Domains' and count the occurrences
+aggregated_df = protein_domain_df.groupby(['Metal_type', 'Domains']).size().reset_index(name='Count')
+
+# Filter out metals with no values in their columns
+non_zero_metals = aggregated_df[aggregated_df['Count'] > 0]['Metal_type'].unique()
+aggregated_df = aggregated_df[aggregated_df['Metal_type'].isin(non_zero_metals)]
+
+# Create a pivot table for the heatmap
+pivot_df = aggregated_df.pivot(index='Domains', columns='Metal_type', values='Count').fillna(0)
+
+# Remove metal columns with all zeros
+pivot_df = pivot_df.loc[:, (pivot_df != 0).any(axis=0)]
+
+# Select the top domains based on their overall count to reduce the number of rows
+# Sum counts across metals for each domain, sort, and select top N
+top_domains_count = pivot_df.sum(axis=1).sort_values(ascending=False).head(20)  # Adjust N as needed
+pivot_df = pivot_df.loc[top_domains_count.index]
+
+# Apply log transformation to the counts
+pivot_df_log = np.log10(pivot_df + 1)
+
+# Plotting
+plt.figure(figsize=(12, 8))
+ax = sns.heatmap(pivot_df_log, annot=False, cmap="YlGnBu", linewidths=.5, linecolor='black', fmt="s")
+
+# Adjusting visual elements for readability
+plt.xticks(rotation=45, fontsize=12, fontweight='bold')  # X-axis labels
+plt.yticks(rotation=0, fontsize=12, fontweight='bold')  # Y-axis labels
+plt.xlabel('Metal Type', fontsize=14, fontweight='bold')  # X-axis title
+plt.ylabel('Protein Domains', fontsize=14, fontweight='bold')  # Y-axis title
+#plt.title('Log-Scale Heatmap of Top Protein Domain Abundance by Metal Type', fontsize=14, fontweight='bold')
+
+plt.tight_layout()
+plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp1\\C_Top_Protein_Domains.png', dpi=300, bbox_inches='tight')
+plt.show()
+
 #Let's analyze metal-binding proteins and their subcellular location
 import pandas as pd
 import os
