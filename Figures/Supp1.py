@@ -97,3 +97,123 @@ cbar.yaxis.label.set_weight('bold')
 # Save the figure
 output_figure_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp1\\B_amino_acid_metal_interaction_counts_clustermap.png"
 plt.savefig(output_figure_path, bbox_inches='tight', pad_inches=0.1)
+
+#Let's analyze metal-binding proteins and their subcellular location
+import pandas as pd
+import os
+# Function to clean the 'Subcellular_Location' column
+def clean_location(location):
+    if pd.isna(location):
+        return 'Unknown'
+    if 'SUBCELLULAR LOCATION:' in location:
+        location = location.split('SUBCELLULAR LOCATION:')[1].split('.')[0].strip()
+        return location.split('{')[0].strip()  # Remove any additional identifiers
+    return location
+# Function to process the metal-binding dataset
+def process_metal_binding_data(file_path, output_path):
+    # Read the dataset
+    df = pd.read_csv(file_path)
+
+    # Extract and clean the 'Subcellular_Location' column
+    df['Subcellular_Location'] = df['Subcellular_Location'].apply(clean_location)
+
+    # Extract the required columns
+    df = df[['Metal_type', 'Subcellular_Location']]
+
+    # Save the processed data with a more descriptive filename
+    df.to_csv(os.path.join(output_path, 'metal_binding_subcellular_location.csv'), index=False)
+
+# Function to process the non-metal binding dataset
+def process_non_metal_binding_data(file_path, output_path):
+    # Read the dataset
+    df = pd.read_csv(file_path)
+
+    # Extract and clean the 'Subcellular_Location' column
+    df['Subcellular_Location'] = df['Subcellular_Location'].apply(clean_location)
+
+    # We only need the 'Subcellular_Location' column with counts
+    location_counts = df['Subcellular_Location'].value_counts().reset_index()
+    location_counts.columns = ['Subcellular_Location', 'Count']
+
+    # Save the processed data with a more descriptive filename
+    location_counts.to_csv(os.path.join(output_path, 'non_metal_binding_subcellular_location_counts.csv'), index=False)
+
+# Paths to the input files and output directory
+metal_file_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_metals_final.csv'
+nonmetal_file_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_nonmetal.csv'
+output_dir = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission'
+
+# Process both datasets
+process_metal_binding_data(metal_file_path, output_dir)
+process_non_metal_binding_data(nonmetal_file_path, output_dir)
+print("Data processing completed.")
+
+#Great, let's plot this data and see where metal binding proteins are located:
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import textwrap
+
+# Function to read and process datasets
+def read_and_process(file_path, metal_type=None):
+    df = pd.read_csv(file_path)
+    if metal_type:
+        df['Metal_type'] = metal_type
+    # Improve readability of 'Subcellular_Location' by replacing semicolons and commas
+    df['Subcellular_Location'] = df['Subcellular_Location'].str.replace(';', ' |', regex=False)
+    df['Subcellular_Location'] = df['Subcellular_Location'].str.replace(',', ' -', regex=False)
+    return df[['Metal_type', 'Subcellular_Location']]
+
+# Read the datasets
+metal_df = read_and_process('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\metal_binding_subcellular_location.csv')
+nonmetal_df = read_and_process('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\non_metal_binding_subcellular_location_counts.csv', 'non-metal')
+
+# Combine the datasets
+combined_df = pd.concat([metal_df, nonmetal_df], ignore_index=True)
+
+# Aggregate the data by 'Metal_type' and 'Subcellular_Location' and count the occurrences
+aggregated_df = combined_df.groupby(['Metal_type', 'Subcellular_Location']).size().reset_index(name='Count')
+
+# Exclude the metal column called 'BR'
+aggregated_df = aggregated_df[aggregated_df['Metal_type'] != 'BR']
+
+def wrap_labels(labels, width):
+    return ['\n'.join(textwrap.wrap(label, width)) for label in labels]
+
+# Create a pivot table for the heatmap
+pivot_df = aggregated_df.pivot(index='Subcellular_Location', columns='Metal_type', values='Count').fillna(0)
+
+# We will use the log10 of the pivot_df for the actual heatmap
+pivot_df_log = np.log10(pivot_df + 1)
+
+# Plotting with black lines between cells
+plt.figure(figsize=(18, 8))  # Adjust the figure size as necessary
+ax = sns.heatmap(pivot_df_log, annot=False, cmap="YlGnBu", linecolor='black', linewidths=.5)
+
+# Adjusting visual elements for readability
+plt.xticks(rotation=45, fontsize=14, fontweight='bold')  # X-axis labels
+
+# Wrapping y-axis labels
+y_labels = pivot_df.index.tolist()
+wrapped_y_labels = wrap_labels(y_labels, width=36)  # Adjust the width as necessary
+ax.set_yticklabels(wrapped_y_labels, rotation=0, fontsize=11, fontweight='bold')
+
+plt.xlabel('Metal Type', fontsize=14, fontweight='bold')  # X-axis title
+plt.ylabel('Subcellular Location', fontsize=14, fontweight='bold')  # Y-axis title
+# plt.title('Log-Scale Heatmap of Subcellular Location Abundance by Metal Type', fontsize=14, fontweight='bold')
+
+# Update color bar labels with scientific notation
+color_bar = ax.collections[0].colorbar
+r = color_bar.vmax - color_bar.vmin
+color_bar.set_ticks([color_bar.vmin + r / 4 * i for i in range(5)])
+color_bar.set_ticklabels([f'$10^{{{int(i)}}}$' for i in range(5)])
+
+# Add a title to the color bar to indicate the data is in log-scale
+color_bar.ax.set_title('Count (log-scale)', pad=10, fontweight='bold')
+
+plt.tight_layout()
+
+# Save the figure to the desired path
+plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp1\\D_Subcellular_Location_Enhanced.png', dpi=300, bbox_inches='tight')
+plt.show()
