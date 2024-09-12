@@ -225,6 +225,91 @@ if not os.path.exists(figures_directory):
 
 plt.savefig(os.path.join(figures_directory, 'C_EC_Classes_Top4_Metals_NonMetals.png'))
 
+#Let's move our analysis now to KEGG IDs
+#First we need to obtain our metal types and the broadest KEGG metabolic pathway
+import pandas as pd
+
+def process_metabolic_pathway(pathway):
+    if isinstance(pathway, str):
+        if 'PATHWAY:' in pathway:
+            return pathway.split('PATHWAY:')[1].split(';')[0].strip()
+        return pathway
+    return 'NA'
+
+def process_dataset(file_path, output_path, is_metal=True):
+    # Read the dataset
+    df = pd.read_csv(file_path)
+
+    # Add 'Metal_type' column for non-metal dataset
+    if not is_metal:
+        df['Metal_type'] = 'non-metal'
+
+    # Extract and process the required columns
+    df['Metabolic_Pathway'] = df['Metabolic_Pathway'].apply(process_metabolic_pathway)
+    df = df[['Metal_type', 'Metabolic_Pathway']]
+
+    # Print the result to a new CSV
+    df.to_csv(output_path, index=False)
+
+# Paths to the input files and output directory
+metal_file_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_metals_final.csv'
+nonmetal_file_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_nonmetal.csv'
+output_dir = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\'
+
+# Process both datasets
+process_dataset(metal_file_path, f'{output_dir}processed_metals.csv', is_metal=True)
+process_dataset(nonmetal_file_path, f'{output_dir}processed_nonmetals.csv', is_metal=False)
+
+print("Data processing completed.")
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Function to read and combine datasets
+def combine_datasets(metal_path, nonmetal_path):
+    metal_df = pd.read_csv(metal_path)
+    nonmetal_df = pd.read_csv(nonmetal_path)
+    # Assign 'non-metal' to the Metal_type column for non-metal dataset
+    nonmetal_df['Metal_type'] = 'non-metal'
+    return pd.concat([metal_df, nonmetal_df], ignore_index=True)
+
+# Read and combine the datasets
+combined_df = combine_datasets('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\processed_metals.csv',
+                               'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\processed_nonmetals.csv')
+
+# Aggregate the data by 'Metal_type' and 'Metabolic_Pathway' and count the occurrences
+aggregated_df = combined_df.groupby(['Metal_type', 'Metabolic_Pathway']).size().reset_index(name='Count')
+
+# Create a pivot table for the heatmap
+pivot_df = aggregated_df.pivot(index='Metabolic_Pathway', columns='Metal_type', values='Count').fillna(0)
+
+# We will use the log10 of the pivot_df for the actual heatmap
+pivot_df_log = np.log10(pivot_df + 1)
+
+# Plotting with increased line size across the cells
+plt.figure(figsize=(18, 10))
+ax = sns.heatmap(pivot_df_log, annot=False, fmt="s", linewidths=1.5, cmap="YlGnBu", linecolor='black')
+
+# Adjusting visual elements
+plt.xticks(rotation=45, fontsize=16, fontweight='bold')  # X-axis labels
+plt.yticks(rotation=0, fontsize=22, fontweight='bold')  # Y-axis labels
+plt.xlabel('Metal Type', fontsize=16, fontweight='bold')  # X-axis title
+plt.ylabel('Metabolic Pathway', fontsize=16, fontweight='bold')  # Y-axis title
+plt.title('', fontsize=18, fontweight='bold')
+
+# Adjust color bar and its title for improved readability
+color_bar = ax.collections[0].colorbar
+color_bar.ax.tick_params(labelsize=20)  # Increase font size for color bar labels
+color_bar.ax.set_title('Count (log-scale)', fontsize=16, fontweight='bold', pad=10)  # Enhance color bar title
+
+plt.tight_layout()
+
+# Save the figure to the desired path
+plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure1\\D_Kegg_Pathways.png')
+plt.show()
+
 #Let's plot a description of the top-10 GO term Descriptions for each category for metals vs. non-metal
 import pandas as pd
 import matplotlib.pyplot as plt
