@@ -430,3 +430,78 @@ plt.show()
 # Save the figure
 output_figure_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure1\\E_split_top_go_terms.png'
 plt.savefig(output_figure_path)
+
+#Now let's start to plot protein families
+import pandas as pd
+
+def process_dataset(file_path, metal_type=None):
+    # Read the dataset
+    df = pd.read_csv(file_path)
+
+    # Check if 'Metal_type' needs to be added
+    if metal_type:
+        df['Metal_type'] = metal_type
+    else:
+        # Ensure that 'Metal_type' is included in the columns to be processed
+        df = df[df.columns.intersection(['Metal_type', 'Protein_Families'])]
+
+    # Fill empty 'Protein_Families' with 'NA'
+    df['Protein_Families'] = df['Protein_Families'].fillna('NA')
+
+    return df[['Metal_type', 'Protein_Families']]
+
+# Process both datasets
+metal_binding_df = process_dataset('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_metals_final.csv')
+nonmetal_binding_df = process_dataset('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_nonmetal.csv', metal_type='non-metal')
+
+# Combine both datasets
+combined_df = pd.concat([metal_binding_df, nonmetal_binding_df], ignore_index=True)
+
+# Save the combined dataset to the specified directory
+output_file_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\protein_family_data.csv'
+combined_df.to_csv(output_file_path, index=False)
+
+print(f"Data processing completed. The combined data is saved to {output_file_path}")
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Read the protein family data
+protein_family_df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\protein_family_data.csv')
+
+# Replace missing values
+protein_family_df['Protein_Families'] = protein_family_df['Protein_Families'].fillna('NA')
+
+# Aggregate and count occurrences
+aggregated_df = protein_family_df.groupby(['Metal_type', 'Protein_Families']).size().reset_index(name='Count')
+
+# Instead of filtering for each metal type, select the top 10 globally
+# Sum counts across metal types, sort, and select top 10
+aggregated_total_counts = aggregated_df.groupby('Protein_Families')['Count'].sum().reset_index()
+top_10_protein_families = aggregated_total_counts.sort_values('Count', ascending=False).head(20)['Protein_Families']
+
+# Filter the original aggregated_df to only include these top 10 protein families
+filtered_df = aggregated_df[aggregated_df['Protein_Families'].isin(top_10_protein_families)]
+
+# Create pivot table for heatmap of the top 10 protein families
+pivot_df = filtered_df.pivot(index='Protein_Families', columns='Metal_type', values='Count').fillna(0)
+pivot_df_log = np.log10(pivot_df + 1)
+
+# Plotting
+plt.figure(figsize=(12, 8))
+ax = sns.heatmap(pivot_df_log, annot=False, cmap="YlGnBu", linewidths=0.5, linecolor='black')
+
+# Adjusting visual elements for better readability
+plt.xticks(rotation=45, fontsize=12, fontweight='bold')
+plt.yticks(rotation=0, fontsize=10, fontweight='bold')
+plt.xlabel('Metal Type', fontsize=14, fontweight='bold')
+plt.ylabel('Protein Families', fontsize=14, fontweight='bold')
+plt.title('', fontsize=14, fontweight='bold')
+
+plt.tight_layout()
+
+# Save the figure to the specified path
+plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure1\\F_Protein_Families.png', dpi=300)
+plt.show()
