@@ -134,3 +134,93 @@ plt.savefig(log_distribution_path)
 plt.close()
 
 print(f"Log-scaled distribution bar plot saved to: {log_distribution_path}")
+
+#Now let's count up the EC number classification by metal type for our dataset:
+#ec_class data is a basic mapping file that is readily obtained online
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+
+# Load the datasets
+metals_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_metals_final.csv'
+non_metals_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_nonmetal.csv'
+ec_class_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\EC_Class.csv'
+
+metals_data = pd.read_csv(metals_data_path)
+non_metals_data = pd.read_csv(non_metals_data_path)
+ec_class_data = pd.read_csv(ec_class_path)
+
+# Label the data
+metals_data['Type'] = 'Metal'
+non_metals_data['Type'] = 'Non-Metal'
+non_metals_data['Metal_type'] = 'Non-Metal'  # Add 'Metal_type' column for consistency
+
+# Combine the datasets
+combined_data = pd.concat([metals_data, non_metals_data], ignore_index=True)
+
+# Extracting the first part of the EC number and format it to match EC_Class
+combined_data['EC_Number_Modified'] = combined_data['EC_Number'].apply(
+    lambda x: str(x).split('.')[0] + '.-.-.-' if pd.notnull(x) else None)
+
+# Determine the top-4 metals
+top_metal_types = combined_data[combined_data['Type'] == 'Metal']['Metal_type'].value_counts().head().index
+
+# Filter the data to include only top-4 metals and non-metals
+filtered_data = combined_data[
+    combined_data['Metal_type'].isin(top_metal_types) | (combined_data['Type'] == 'Non-Metal')]
+
+# Mapping modified EC numbers to their classes
+mapped_data = pd.merge(filtered_data, ec_class_data, left_on='EC_Number_Modified', right_on='EC_Number', how='left')
+
+# Data Analysis
+grouped_data = mapped_data.groupby(['Metal_type', 'Class', 'Class_Function']).size().reset_index(name='Count')
+
+# Plotting
+plt.figure(figsize=(15, 10))
+
+# Define colors
+non_metal_color = 'gray'  # Color for non-metals
+# Adjusting the range to start from a brighter part of the viridis colormap
+metal_colors = plt.cm.viridis(np.linspace(0.2, 1, len(top_metal_types)))
+metal_color_mapping = {}  # Dictionary to store metal-color mapping
+
+# Initialize a dictionary for cumulative counts
+cumulative_counts = dict.fromkeys(grouped_data['Metal_type'].unique(), 0)
+
+# Create a stacked bar plot
+for metal in grouped_data['Metal_type'].unique():
+    metal_data = grouped_data[grouped_data['Metal_type'] == metal]
+    color = non_metal_color if metal == 'Non-Metal' else metal_colors[top_metal_types.tolist().index(metal)]
+
+    plt.bar(metal_data['Class_Function'] + ' (' + metal_data['Class'].astype(str) + ')',
+            metal_data['Count'],
+            label=metal,
+            color=color,
+            bottom=[cumulative_counts[m] for m in metal_data['Metal_type']])
+
+    # Update the cumulative counts
+    for m, c in zip(metal_data['Metal_type'], metal_data['Count']):
+        cumulative_counts[m] += c
+
+# Print metal-color mapping
+print("Metal-Color Mapping:")
+for metal, color in metal_color_mapping.items():
+    print(f"{metal}: {color}")
+
+# Enhancing Font Size and Bold Labels
+plt.title('', fontsize=20, fontweight='bold')
+plt.xlabel('EC Class (Function)', fontsize=20, fontweight='bold')
+plt.ylabel('Counts', fontsize=20, fontweight='bold')
+plt.yticks(rotation=0, fontsize=22, fontweight='bold')
+plt.xticks(rotation=45, fontsize=24, fontweight='bold', ha='right')
+plt.yscale('log')  # Set y-axis to logarithmic scale
+plt.legend(title='Types', fontsize=16)
+plt.tight_layout()
+
+# Saving the plot
+figures_directory = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure1\\'
+if not os.path.exists(figures_directory):
+    os.makedirs(figures_directory)
+
+plt.savefig(os.path.join(figures_directory, 'C_EC_Classes_Top4_Metals_NonMetals.png'))
