@@ -103,3 +103,34 @@ plt.axis('equal')  # Equal aspect ratio ensures that pie chart is drawn as a cir
 # Save the figure
 output_figure_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure1\\PiechartB.png"
 plt.savefig(output_figure_path, bbox_inches='tight')
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the dataset
+file_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\binding_data_New.csv'
+data = pd.read_csv(file_path)
+
+# Count the total metal binding sites per metal
+metal_counts = data['Metal_type'].value_counts()
+
+# Setting up the color palette
+# Setting up the color palette
+colors = sns.color_palette('viridis', len(metal_counts))  # Replace 'viridis' with your preferred palette
+
+# Plotting the distribution as a bar plot with a log scale
+plt.figure(figsize=(12, 8))
+metal_counts.plot(kind='bar', color=colors, logy=True, width=0.8)  # Adjust the width as needed
+plt.title('Log-Scaled Distribution of Metal Binding Sites by Metal Type', fontsize=16, fontweight='bold')
+plt.xlabel('Metal Type', fontsize=16, fontweight='bold')
+plt.ylabel('Number of Binding Sites (Log Scale)', fontsize=16, fontweight='bold')
+plt.xticks(rotation=45, fontsize=14, fontweight='bold')
+plt.yticks(fontsize=14, fontweight='bold')
+# Save the log-scaled bar plot
+log_distribution_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure1\\B_metal_binding_sites_log_distribution.png'  # Adjust this path as necessary
+plt.savefig(log_distribution_path)
+plt.close()
+
+print(f"Log-scaled distribution bar plot saved to: {log_distribution_path}")
