@@ -222,3 +222,25 @@ plt.subplots_adjust(bottom=0.15)
 # Save the figure in high resolution for publication quality
 plt.savefig("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure2\\C_residue_distance_violin.png", dpi=300, bbox_inches='tight')
 plt.show()
+
+#More residue plots
+import pandas as pd
+
+# Load the binding data
+binding_df = pd.read_csv("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\binding_data_New.csv")  # Update the path as needed
+
+# Ensure only valid three-letter amino acid residues are considered
+amino_acids_3_letter = ['ALA', 'ARG', 'ASN', 'ASP', 'CYS', 'GLN', 'GLU', 'GLY', 'HIS', 'ILE', 'LEU', 'LYS', 'MET', 'PHE', 'PRO', 'SER', 'THR', 'TRP', 'TYR', 'VAL']
+binding_df = binding_df[binding_df['Residue_name'].isin(amino_acids_3_letter)]
+
+# Group by metal type and residue name, then calculate statistical measures
+aggregated_df = binding_df.groupby(['Metal_type', 'Residue_name'])['Distance'].agg(['min', 'max', 'mean', 'std']).reset_index()
+
+# Rename columns for clarity
+aggregated_df.columns = ['Metal_type', 'Residue_name', 'Min_Distance', 'Max_Distance', 'Mean_Distance', 'Std_Deviation']
+
+# Save the aggregated data to a CSV file
+csv_output_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\aggregated_metal_aa_interactions.csv"
+aggregated_df.to_csv(csv_output_path, index=False)
+
+print(f"Aggregated CSV file has been saved to: {csv_output_path}")
