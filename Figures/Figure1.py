@@ -224,3 +224,124 @@ if not os.path.exists(figures_directory):
     os.makedirs(figures_directory)
 
 plt.savefig(os.path.join(figures_directory, 'C_EC_Classes_Top4_Metals_NonMetals.png'))
+
+#Let's plot a description of the top-10 GO term Descriptions for each category for metals vs. non-metal
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import textwrap
+from matplotlib.ticker import MaxNLocator
+
+# Load the datasets for metals and non-metals
+metals_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\merged_metals_data.csv'
+non_metals_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\merged_non_metals_data.csv'
+
+# Read the data
+metals_data = pd.read_csv(metals_data_path)
+non_metals_data = pd.read_csv(non_metals_data_path)
+
+# Function to get the top n GO terms for a given category and data
+def get_top_n_go_terms(data, category, n=5):
+    top_terms = (
+        data[data['Category'] == category]
+            .groupby('Description')
+            .size()
+            .reset_index(name='Count')
+            .sort_values(by='Count', ascending=False)
+            .head(n)
+    )
+    return top_terms
+
+# Define the categories you want to plot
+categories = ['molecular_function', 'biological_process', 'cellular_component']
+
+# Function to wrap text
+def wrap_labels(ax, width, axis='y'):
+    if axis == 'y':
+        labels = ax.get_yticklabels()
+    elif axis == 'x':
+        labels = ax.get_xticklabels()
+
+    wrapped_labels = [textwrap.fill(label.get_text(), width) for label in labels]
+
+    if axis == 'y':
+        ax.set_yticklabels(wrapped_labels)
+    elif axis == 'x':
+        ax.set_xticklabels(wrapped_labels)
+
+# Start plotting
+fig, axes = plt.subplots(3, 2, figsize=(17, 18))  # Increased vertical size
+plt.subplots_adjust(hspace=1.5, wspace=0.8)  # Adjusted vertical and horizontal space
+
+for i, category in enumerate(categories):
+    # Get the top 5 GO term descriptions for metal-binding genes
+    top_metal_terms = get_top_n_go_terms(metals_data, category, n=5)
+
+    # Get the top 5 GO term descriptions for non-metal-binding genes
+    top_non_metal_terms = get_top_n_go_terms(non_metals_data, category, n=5)
+
+    # Plot for metal-binding genes
+    ax1 = sns.barplot(y='Description', x='Count', data=top_metal_terms, ax=axes[i, 0], color='blue')
+    ax1.set_title(category, fontweight='bold', fontsize=15)
+    ax1.set_xscale('log')
+    ax1.set_xlabel('Count (Log Scale)', fontweight='bold', fontsize=12)
+    ax1.set_ylabel('', fontweight='bold', fontsize=12)
+    ax1.set_xticks([1, 10, 100, 1000])
+    ax1.get_xaxis().set_major_formatter(plt.ScalarFormatter(useMathText=True))
+
+    # Set bold font properties for x-tick labels
+    for tick in ax1.get_xticklabels():
+        tick.set_fontweight('bold')
+        tick.set_fontsize(12)
+
+    # Set bold font properties for y-tick labels
+    for tick in ax1.get_yticklabels():
+        tick.set_fontweight('bold')
+        tick.set_fontsize(18)
+
+    # Set tick parameters for bold tick marks
+    ax1.tick_params(axis='x', which='both', width=1.5)
+    ax1.tick_params(axis='y', which='both', width=1.5)
+
+    # Wrap y-tick labels
+    wrap_labels(ax1, width=26, axis='y')  # Adjust width as necessary
+
+    # Reduce the number of y-ticks to prevent overlap
+    ax1.yaxis.set_major_locator(MaxNLocator(nbins=5))
+
+    # Plot for non-metal-binding genes
+    ax2 = sns.barplot(y='Description', x='Count', data=top_non_metal_terms, ax=axes[i, 1], color='orange')
+    ax2.set_title(category, fontweight='bold', fontsize=15)
+    ax2.set_xscale('log')
+    ax2.set_xlabel('Count (Log Scale)', fontweight='bold', fontsize=12)
+    ax2.set_ylabel('', fontweight='bold', fontsize=12)
+    ax2.set_xticks([1, 10, 100, 1000])
+    ax2.get_xaxis().set_major_formatter(plt.ScalarFormatter(useMathText=True))
+
+    # Set bold font properties for x-tick labels
+    for tick in ax2.get_xticklabels():
+        tick.set_fontweight('bold')
+        tick.set_fontsize(12)
+
+    # Set bold font properties for y-tick labels
+    for tick in ax2.get_yticklabels():
+        tick.set_fontweight('bold')
+        tick.set_fontsize(18)
+
+    # Set tick parameters for bold tick marks
+    ax2.tick_params(axis='x', which='both', width=1.5)
+    ax2.tick_params(axis='y', which='both', width=1.5)
+
+    # Wrap y-tick labels
+    wrap_labels(ax2, width=16, axis='y')  # Adjust width as necessary
+
+    # Reduce the number of y-ticks to prevent overlap
+    ax2.yaxis.set_major_locator(MaxNLocator(nbins=5))
+
+# Adjust layout with padding to prevent clipping of labels
+plt.tight_layout(pad=3.0, rect=[0.03, 0.03, 1, 1])  # Added padding to the left side
+plt.show()
+
+# Save the figure
+output_figure_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure1\\E_split_top_go_terms.png'
+plt.savefig(output_figure_path)
