@@ -66,3 +66,75 @@ plt.yticks(rotation=0)  # Ensure the y-axis labels are horizontal
 # Show the heatmap
 plt.tight_layout()
 plt.show()
+
+#Plot AA Property Change and Grantham Score (Figure 3B)
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\processed_merged_data_distance_5.csv'
+output_dir = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure3\\"
+distance = 5.0
+
+def categorize_score(score):
+    if pd.isna(score):
+        return 'unknown'
+    elif score <= 50:
+        return 'conservative'
+    elif score <= 100:
+        return 'moderately conservative'
+    elif score <= 150:
+        return 'moderately radical'
+    else:
+        return 'radical'
+def plot_mutations(data_path, output_dir, distance):
+    # Load the dataset
+    df = pd.read_csv(data_path)
+
+    # Ensure 'Grantham_Score' is numeric
+    df['Grantham_Score'] = pd.to_numeric(df['Grantham_Score'], errors='coerce')
+
+    # Apply the categorization function to Grantham scores
+    df['Grantham_Category'] = df['Grantham_Score'].apply(categorize_score)
+
+    # Drop rows with missing values in these columns
+    df.dropna(subset=['Property_Change', 'Grantham_Score', 'Metal_type'], inplace=True)
+
+    # Sort the dataframe
+    df.sort_values(by=['Metal_type', 'Property_Change'], inplace=True)
+
+    # Define colors for each Grantham category
+    grantham_colors = {
+        'conservative': 'green',
+        'moderately conservative': 'blue',
+        'moderately radical': 'yellow',
+        'radical': 'red',
+        'unknown': 'grey'
+    }
+
+    # Create a plot resembling a heatmap
+    plt.figure(figsize=(12, 8))
+    sns.scatterplot(data=df, x='Metal_type', y='Property_Change', hue='Grantham_Category', palette=grantham_colors,
+                    s=200)
+    plt.title(f'Metal Type vs Property Change Categorized by Grantham Score (Distance ≤ {distance})')
+    plt.xlabel('Metal Type')
+    plt.ylabel('Property Change')
+    plt.xticks(rotation=45)
+
+    # Add legend
+    plt.legend(title='Grantham Category', bbox_to_anchor=(1.05, 1), loc='upper left')
+
+    # Save the plot
+    plt.savefig(f"{output_dir}metalloprotein_heatmap_style_plot_distance_{distance}.png", bbox_inches='tight')
+    plt.close()
+# Define the output directory
+
+# File paths for different distances
+file_paths = {
+    5: "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\processed_merged_data_distance_5.csv",
+    10: "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\processed_merged_data_distance_10.csv",
+    20: "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\processed_merged_data_distance_20.csv"
+}
+
+# Generate plots for each file
+for distance, file_path in file_paths.items():
+    plot_mutations(file_path, output_dir, distance)
