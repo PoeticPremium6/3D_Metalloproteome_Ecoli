@@ -138,3 +138,215 @@ file_paths = {
 # Generate plots for each file
 for distance, file_path in file_paths.items():
     plot_mutations(file_path, output_dir, distance)
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the dataset
+pickle_file_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\filtered_enhanced_data.pkl'
+data = pd.read_pickle(pickle_file_path)
+
+# Convert 'impact' to boolean for easier calculations
+data['impact'] = data['impact'].astype(bool)
+
+# Function to calculate proportion of disruption
+def calculate_disruption_proportion(group):
+    return group['impact'].mean()
+
+# Analysis by Transcription Factor
+disruption_by_tf = data.groupby('tf').apply(calculate_disruption_proportion)
+disruption_by_tf = disruption_by_tf.reset_index(name='Disruption_Proportion')
+
+# Analysis by Transcription Factor and Mutation Category (Experimental)
+disruption_tf_experimental = data.groupby(['tf', 'Mutation_Category_Experimental']).apply(calculate_disruption_proportion)
+disruption_tf_experimental = disruption_tf_experimental.reset_index(name='Disruption_Proportion')
+
+# Pivot the data to create a matrix for the heatmap
+heatmap_data = disruption_tf_experimental.pivot("Mutation_Category_Experimental", "tf", "Disruption_Proportion")
+heatmap_data.fillna(0, inplace=True)  # Fill NaN values with zero
+
+# Reverse the order of the y-axis
+heatmap_data = heatmap_data.sort_index(ascending=False)
+
+# Analysis by Metal Type
+disruption_metal = data.groupby('Metal_type').apply(calculate_disruption_proportion)
+disruption_metal = disruption_metal.reset_index(name='Disruption_Proportion')
+
+# Define directory to save figures
+figures_dir = '/Users/josspa/GPS-M/Figures/4.0/Figure3'
+
+# Plotting
+sns.set(style="whitegrid")
+
+# Adjust the figure size and aspect ratio
+fig, ax = plt.subplots(figsize=(28, 10))  # Increased width for better readability
+
+# Plot for Disruption by TF and Mutation Category (Experimental) as Heatmap
+heatmap = sns.heatmap(heatmap_data, ax=ax, cmap="viridis_r", cbar_kws={'label': 'Proportion of Disruption'}, linewidths=.5)
+#plt.title('Disruption Proportion by TF and Experimental Mutation Category')
+plt.xlabel('Transcription Factor', fontsize=14, fontweight='bold')
+plt.ylabel('Mutation Category (Experimental)', fontsize=14, fontweight='bold')
+plt.xticks(rotation=45, fontsize=16, fontweight='bold')
+plt.yticks(rotation=0, fontsize=15, fontweight='bold')
+plt.tight_layout()  # Adjust layout to fit everything properly
+# Customizing colorbar (legend) label
+cbar = heatmap.collections[0].colorbar
+cbar.set_label('Proportion of Disruption', fontsize=14, fontweight='bold')
+
+plt.savefig(f"{figures_dir}/C_Disruption_by_TF_Experimental_Mutation_Category_Heatmap.png")
+plt.close()
+
+# Plot for Metal Type
+disruption_metal_sorted = disruption_metal.sort_values('Disruption_Proportion', ascending=False)
+
+# Assuming 'disruption_metal_sorted' is a predefined list or array
+figures_dir = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure3\\'
+
+# Create barplot with single color (purple)
+plt.figure(figsize=(12, 8))
+bar = sns.barplot(x='Metal_type', y='Disruption_Proportion', data=disruption_metal_sorted, color='purple')
+# Customize plot appearance
+plt.xlabel('Metal Type', fontsize=15, fontweight='bold')
+plt.ylabel('Proportion of Disruption', fontsize=16, fontweight='bold')
+plt.xticks(rotation=45, fontsize=18, fontweight='bold')
+plt.yticks(rotation=0, fontsize=14, fontweight='bold')
+# Save the updated plot
+plt.savefig(f"{figures_dir}/D_Disruption_Metal_Type_purple.png")
+plt.close()
+
+#4. Analysis of Post-Translational Modifications (PTMs) in the Context of Mutations
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load up datasets
+base_directory = '/Users/josspa/GPS-M/'
+binding_data = pd.read_csv(base_directory + 'binding_data_New.csv')
+non_metal_data = pd.read_csv(base_directory + 'non_metal_data.csv')
+ptm_data = pd.read_csv(base_directory + 'MutFunc/other_ptms.tab', sep='\t')  # Assuming it's tab-delimited
+mutation_data = pd.read_csv(base_directory + 'categorized_dataset.csv')
+
+# Merge PTM data with binding and mutation data on UniProt ID
+binding_ptms = pd.merge(binding_data, ptm_data, left_on='UniProt_ID', right_on='acc', how='inner')
+non_metal_ptms = pd.merge(non_metal_data, ptm_data, left_on='UniProt_ID', right_on='acc', how='inner')
+mutation_ptms = pd.merge(mutation_data, ptm_data, left_on='Uniprot_ID', right_on='acc', how='inner')
+
+# Count the PTMs for each dataset
+binding_ptm_counts = binding_ptms['modification'].value_counts().reset_index(name='Binding')
+non_metal_ptm_counts = non_metal_ptms['modification'].value_counts().reset_index(name='Non-Binding')
+mutation_ptm_counts = mutation_ptms['modification'].value_counts().reset_index(name='Mutation')
+
+# Merge the counts into a single DataFrame
+merged_counts = binding_ptm_counts.merge(non_metal_ptm_counts, on='index', how='outer')
+merged_counts = merged_counts.merge(mutation_ptm_counts, on='index', how='outer').fillna(0)
+
+# Sort the data for visualization
+merged_counts.sort_values(by='Binding', ascending=False, inplace=True)
+
+# Plotting
+fig, ax = plt.subplots(figsize=(14, 8))
+# Width of the bars
+#bar_width = 0.35
+
+# Set position of bar on X axis
+r1 = range(len(merged_counts))
+r2 = [x + bar_width + 0.05 for x in r1]
+r3 = [x + 2 * (bar_width + 0.05) for x in r1]
+
+# Make the plot
+ax.bar(r1, merged_counts['Binding'], color='blue', width=bar_width, edgecolor='black', label='Metal-Binding')
+ax.bar(r2, merged_counts['Non-Binding'], color='green', width=bar_width, edgecolor='black', label='Non-Metal-Binding')
+ax.bar(r3, merged_counts['Mutation'], color='orange', width=bar_width, edgecolor='black', label='Mutation')
+
+# Add xticks on the middle of the group bars
+ax.set_xlabel('Modification Type', fontsize=12, fontweight='bold')
+# Set xticks and labels
+bar_width = 0.30  # Adjust as per your bar width setup
+ax.set_xticks([r + bar_width for r in range(len(merged_counts))])
+# Boldface y-axis tick labels
+ax.set_xticklabels(merged_counts['index'], rotation=90, fontsize=10, fontweight='bold')  # Increased font size for xtick labels
+# Set ylabel with increased font size and bold font
+ax.set_ylabel('Count', fontsize=12, fontweight='bold')
+# Set yscale to logarithmic
+ax.set_yscale('log')
+# Set title with increased font size and bold font
+#ax.set_title('Distribution of PTMs in Metal-Binding vs Non-Metal-Binding vs Mutation Data', fontsize=14, fontweight='bold')
+
+# Create legend & Show graphic
+ax.legend()
+
+# Ensure layout is tight so labels are not cut off
+plt.tight_layout()
+
+# Save the plot
+save_path = base_directory + 'Figures/4.0/Figure3/E_PTM_Distribution_Comparison_Grouped.png'
+plt.savefig(save_path, format='png', dpi=300)
+plt.show()
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the data
+file_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Final\\Results\\PPI_Metal_Binding_Analysis.csv"
+data = pd.read_csv(file_path)
+
+# Drop duplicate rows
+data = data.drop_duplicates()
+
+# Replace missing values with 0
+data['Mutation_Count'] = data['Mutation_Count'].fillna(0)
+data['Log_Scaled_Mutations'] = data['Log_Scaled_Mutations'].fillna(0)
+
+# Strip any extra spaces from column names
+data.columns = data.columns.str.strip()
+
+# Filter out rows where 'Mutation_Count' or 'Log_Scaled_Mutations' are zero
+filtered_data = data[(data['Mutation_Count'] > 0) & (data['Log_Scaled_Mutations'] > 0)]
+
+# Group by 'Binding_Metal_Types' and aggregate
+grouped_data = filtered_data.groupby('Binding_Metal_Types').agg({
+    'Mutation_Count': 'sum',
+    'Log_Scaled_Mutations': 'mean',
+    'Degree': ['sum', 'mean'],  # Sum and mean of degrees
+    'UniProt_ID': 'count'  # Counting the number of proteins
+}).rename(columns={'UniProt_ID': 'Protein_Count'}).reset_index()
+
+# Flatten MultiIndex columns
+grouped_data.columns = ['_'.join(col).strip() if isinstance(col, tuple) else col for col in grouped_data.columns.values]
+grouped_data = grouped_data.rename(columns={
+    'Degree_sum': 'Total_Degree',
+    'Degree_mean': 'Average_Degree'
+})
+
+# Prepare the plot
+plt.figure(figsize=(14, 8))
+
+# Create a bar plot for Log-Scaled Mutations in purple
+sns.barplot(x='Binding_Metal_Types_', y='Log_Scaled_Mutations_mean', data=grouped_data, color='purple', label='Avg Log-Scaled Mutations')
+
+# Create a line plot for Total Degree
+sns.lineplot(x='Binding_Metal_Types_', y='Total_Degree_sum', data=grouped_data, color='orange', marker='o', label='Total Degree')
+
+# Add labels and title
+plt.xlabel('Binding Metal Type')
+plt.ylabel('Average Log-Scaled Mutations')
+plt.title('Average Log-Scaled Mutations and Total Degree by Metal Binding Type')
+plt.xticks(rotation=45)
+
+# Create a secondary y-axis for Degree
+ax2 = plt.gca().twinx()
+ax2.set_ylabel('Total Degree', color='orange')
+ax2.tick_params(axis='y', labelcolor='orange')
+
+# Combine y-axis labels
+ax1 = plt.gca()
+ax1.set_ylabel('Average Log-Scaled Mutations', color='purple')
+ax1.tick_params(axis='y', labelcolor='purple')
+
+# Add legend
+plt.legend(loc='upper left')
+
+# Save the plot
+plt.savefig("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure3\\Integrated_Plot.png", bbox_inches='tight', dpi=300)
+plt.close()
