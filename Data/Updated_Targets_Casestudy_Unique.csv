@@ -1,0 +1,64 @@
+Blattner Numbers	Metal_type	close_mutations_count	CaseStudy_Category	ALE_Experiment
+aceB mas b4014 JW3974	MG;CA	1	Basic	MG1655-M9-NC_000913_3gb-stationary-37-D-arabinose2;TEE;BOP27;TOL_propanediol
+aceE b0114 JW0110	MG	1.069565217	Basic	TOL_propanediol
+adhE ana b1241 JW1228	FE	1.076923077	Industrial	ILT_MG1655;TOL_adipic_acid;BOP27;TOL_propanediol
+amiA yfeE b2435 JW2428	ZN	1	Basic	NA
+ansB b2957 JW2924	ZN	1.142857143	Industrial	NA
+arcA cpxC dye fexA msp seg sfrA b4401 JW4364	MG	1.162162162	Stress	TOL_propanediol
+aroG b0754 JW0737	PB;MN	2.641791045	Basic	TOL_propanediol
+asnC b3743 JW3721	MG	1	Basic	ECNR2.1;genome-reduced_strain_MS56-M9-MG1655
+atoD b2221 JW2215	MG	1.444444444	Basic	Ecoli_Ethanol_Stress_ALE;TOL_2_3_butanediol
+cdd b2143 JW2131	ZN;U	1	Basic	GYD_1500uL;TOL_propanediol
+cirA cir feuA b2155 JW2142	SR	1	Stress	TOL_adipic_acid;TOL_propanediol;SSW_GLU_GLY;BOP27
+dinB dinP b0231 JW0221	MG	1.21402214	Stress	ECNR2.1
+dps pexB vtm b0812 JW0797		1	Stress	NA
+dsbG ybdP b0604 JW0597	CD	1	Stress	ECNR2.1
+eno b2779 JW2750	MG	4.5	Basic	NA
+fabB fabC b2323 JW2320		1	Industrial	NA
+fecA b4291 JW4251	FE	1.142857143	Stress	TOL_adipic_acid;TOL_propanediol
+fhuA tonA b0150 JW0146	FE	1	Stress	NA
+fldA b0684 JW0671	CA	1	Basic	NA
+folA tmrA b0048 JW0047	CA;MN;MG	2.367041199	Basic	NA
+fpr mvrA b3924 JW3895	ZN	1.666666667	Stress	pyocyanin_supplemented_medium
+frdA b4154 JW4115	K	1	Basic	TOL_octanoic_acid
+glmU yieA b3730 JW3708	MG;CO	1	Basic	TOL_2_3_butanediol;TOL_n_butanol;TOL_propanediol
+gntK b3437 JW3400	MG	1	Basic	GYD_015uL;BOP27-M9
+guaB guaR b2508 JW5401	MG	1	Basic	TOL_propanediol
+hflD ycfC b1132 JW5165	HG	1.045454545	Basic	BOP27-M9;TOL_propanediol
+hyaA b0972 JW0954	MG	1	Basic	TOL_propanediol
+hybO yghV b2997 JW2965	MG	1.842105263	Basic	ILT_MG1655
+ihfA hid himA b1712 JW1702	MN;CD	1.527777778	Basic	42C
+katE b1732 JW1721	MG	1	Stress	TOL_hexamethylenediamine;ECNR2.1;BOP27;TOL_propanediol
+lacZ b0344 JW0335	MG	1.638702882	Industrial	ILT_MG1655;ECNR2.1
+malE b4034 JW3994	ZN;MG	1	Basic	Ecoli_Ethanol_Stress_ALE;BOP27
+metJ b3938 JW3909	MG	2.777777778	Basic	TOL_2_3_butanediol;TOL_octanoic_acid;TOL_propanediol;42C
+metK metX b2942 JW2909	MG;K;CO	1	Basic	NA
+mglB b2150 JW2137	CA	1	Basic	ECNR2.1;TOL_2_3_butanediol
+moeA bisB chlE narE b0827 JW0811	MG	1	Basic	ECNR2.1
+nanA npl b3225 JW3194		1.285714286	Basic	Ecoli_Ethanol_Stress_ALE;TOL_propanediol
+narG bisD narC b1224 JW1215	MO	4.117647059	Industrial	42C;TOL_propanediol
+nfo b2159 JW2146	ZN	1	Stress	TOL_2_3_butanediol
+nikA b3476 JW3441	NI;FE	2	Basic	TOL_hexamethylenediamine;TOL_propanediol
+nrfA b4070 JW4031	CA;EU	1	Basic	SSW_GLU_XYL;BOP27
+ompC meoA par b2215 JW2203	MG	2	Stress	ECNR2.1;BOP27
+pfkA b3916 JW3887	MG	2.925925926	Basic	NA
+phoA b0383 JW0374	ZN;MG;CO	1.380881255	Industrial	BOP27
+phoB b0399 JW0389	MG	1	Stress	tpi
+phoP b1130 JW1116	MG	1	Stress	ILT_MG1655;ECNR2.1
+polA resA b3863 JW3835	ZN;MN;MG;EU	1	Basic	NA
+polB dinA b0060 JW0059	MG;CA	2.461538462	Basic	TOL_coumaric_acid;TOL_glutaric_acid
+poxB b0871 JW0855	MG	1	Basic	pgi;TOL_propanediol
+ppc glu b3956 JW3928	MN	4	Basic	Ecoli_Ethanol_Stress_ALE;pgi;ECNR2.1;TOL_adipic_acid
+prpB yahQ b0331 JW0323	MG	1.727272727	Basic	ILT_MG1655;TOL_propanediol
+purA adeK b4177 JW4135	MG	3.597765363	Basic	NA
+purC b2476 JW2461	MG	1.034482759	Basic	NA
+purR b1658 JW1650	MG	1.260869565	Basic	ECNR2.1;BOP27
+pyrC b1062 JW1049	ZN	1	Basic	SSW_GLU_XYL
+recA lexB recH rnmB tif umuB zab b2699 JW2669	MG;CA;MN	1.423529412	Stress	ILT_MG1655
+ribA b1277 JW1269	ZN	1	Basic	NA
+sbcD yajA b0398 JW0388	MN;MG	1	Stress	NA
+sodA b3908 JW3879	MN;FE	1	Stress	TOL_adipic_acid
+sodB b1656 JW1648	FE	1	Stress	ECNR2.1
+spy b1743 JW1732	ZN	1	Stress	pgi
+tonB exbA b1252 JW5195	BR	2	Basic	BOP27
+uvrD mutU pdeB rad recL b3813 JW3786	HG;MG	1	Stress	42C;TOL_2_3_butanediol
