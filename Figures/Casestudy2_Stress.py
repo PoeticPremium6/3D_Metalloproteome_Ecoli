@@ -234,5 +234,5 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 
 # Save the figure
-plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp5\\D_Impact_of_ALE_Experiments_on_Hg_Proteins.png')
+plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp4\\D_Impact_of_ALE_Experiments_on_Hg_Proteins.png')
 plt.show()
