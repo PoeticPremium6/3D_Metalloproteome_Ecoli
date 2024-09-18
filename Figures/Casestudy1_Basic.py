@@ -7,7 +7,7 @@ import textwrap
 
 
 # Load the dataset
-df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\enriched_binding_and_annotations_5.csv')
+df = pd.read_csv('.../enriched_binding_and_annotations_5.csv')
 
 # Filter for Zn-binding proteins
 df_zn = df[df['Metal_type'].str.contains('ZN', na=False)]
@@ -66,7 +66,7 @@ plt.setp(axes[1].get_yticklabels(), fontweight='bold')
 plt.tight_layout()
 
 # Save the combined figure
-plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure4\\A_top_10_go_terms_combined_zn.png')
+plt.savefig('.../A_top_10_go_terms_combined_zn.png')
 plt.show()
 ###
 import pandas as pd
@@ -74,7 +74,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the enriched dataset
-df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\enriched_binding_and_annotations_5.csv')
+df = pd.read_csv('.../enriched_binding_and_annotations_5.csv')
 
 # Filter for Zinc-binding proteins
 zinc_df = df[df['Metal_type'] == 'ZN']
@@ -105,7 +105,7 @@ plt.xticks(fontsize=12, fontweight='bold')
 plt.yticks(fontsize=12, fontweight='bold')
 plt.grid(True)
 plt.tight_layout()
-plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure4\\B_Distribution_of_Close_Mutation_Counts_Zinc.png')
+plt.savefig('.../B_Distribution_of_Close_Mutation_Counts_Zinc.png')
 plt.show()
 
 print(magnesium_mutation_counts[['UniProt_ID', 'Blattner Numbers', 'close_mutations_count']].head(10))
@@ -118,7 +118,7 @@ plt.xticks(fontsize=12, fontweight='bold')
 plt.yticks(fontsize=12, fontweight='bold')
 plt.grid(True)
 plt.tight_layout()
-plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp3\\B_Distribution_of_Close_Mutation_Counts_Magnesium.png')
+plt.savefig('.../B_Distribution_of_Close_Mutation_Counts_Magnesium.png')
 plt.show()
 
 import pandas as pd
@@ -126,10 +126,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the enriched dataset
-df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\enriched_binding_and_annotations_5.csv')
+df = pd.read_csv('.../enriched_binding_and_annotations_5.csv')
 
 # Load the case study category dataset
-case_study_df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Updated_Targets_Casestudy_Unique.csv')
+case_study_df = pd.read_csv('.../Updated_Targets_Casestudy_Unique.csv')
 
 # Merge the enriched dataset with case study categories on Blattner Numbers
 merged_df = pd.merge(df, case_study_df[['Blattner Numbers', 'CaseStudy_Category']], on='Blattner Numbers', how='left')
@@ -191,7 +191,7 @@ plt.yticks(fontsize=12, fontweight='bold')
 plt.legend(title='Case Study Category', title_fontsize='13', fontsize='12', frameon=True, loc='upper right')
 
 plt.tight_layout(pad=1.0)
-plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure4\\C_Distribution_of_Zinc_Binding_Sites_With_Mutation_Counts_Colored_By_CaseStudy_Category_Log_Scale.png')
+plt.savefig('.../C_Distribution_of_Zinc_Binding_Sites_With_Mutation_Counts_Colored_By_CaseStudy_Category_Log_Scale.png')
 plt.show()
 
 
@@ -226,12 +226,12 @@ plt.yticks(fontsize=10, fontweight='bold')
 # Adjust legend font size and title font size
 plt.legend(title='Case Study Category', title_fontsize='13', fontsize='12', frameon=True, loc='upper right')
 # Save the figure - adjust the path as necessary
-plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp3\\C_Distribution_of_Magnesium_Binding_Sites_With_Mutation_Counts_Colored_By_CaseStudy_Category_Log_Scale.png')
+plt.savefig('.../C_Distribution_of_Magnesium_Binding_Sites_With_Mutation_Counts_Colored_By_CaseStudy_Category_Log_Scale.png')
 plt.show()
 
 # Assuming 'data_path' and 'enriched_binding_data_path' are already defined and point to your CSV files
-data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Updated_Targets_Casestudy_Unique.csv'
-enriched_binding_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\enriched_binding_and_annotations_5.csv'
+data_path = 'C.../Updated_Targets_Casestudy_Unique.csv'
+enriched_binding_data_path = '.../enriched_binding_and_annotations_5.csv'
 
 # Load the datasets
 targets_df = pd.read_csv(data_path)
@@ -267,7 +267,7 @@ plt.yticks(fontsize=12, fontweight='bold')
 plt.tight_layout()
 
 # Save the figure
-plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure4\\D_Impact_of_ALE_Experiments_on_Zn_Proteins.png')
+plt.savefig('.../D_Impact_of_ALE_Experiments_on_Zn_Proteins.png')
 plt.show()
 
 # Group by ALE experiments to see which ones are associated with high mutation counts in Zn-binding proteins
