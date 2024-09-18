@@ -3,7 +3,7 @@ import pandas as pd
 import pandas as pd
 
 # Define the path for the large dataset
-merged_dataset_file = "/Users/josspa/GPS-M/Test/merged_dataset.csv"
+merged_dataset_file = ".../merged_dataset.csv"
 
 # Load only the 'gene' and 'Entry' columns from the dataset
 columns_to_load = ['gene', 'Entry']
@@ -122,10 +122,10 @@ def get_grantham_score(aa_orig, aa_final):
     return grantham_matrix.get((aa_orig, aa_final), None)
 
 # Define file paths
-ale_mutations_file = "/Users/josspa/GPS-M/Variants/ALE_Mutations.csv"
-ltee_mutations_file = "/Users/josspa/GPS-M/Variants/LTEE_Mutations.csv"
-tfbs_file = "/Users/josspa/GPS-M/MutFunc/tfbs.tab"
-mapping_file = "/Users/josspa/GPS-M/Test/merged_dataset_subset.csv"  # Path to the subset file
+ale_mutations_file = ".../ALE_Mutations.csv"
+ltee_mutations_file = ".../LTEE_Mutations.csv"
+tfbs_file = ".../MutFunc/tfbs.tab"
+mapping_file = ".../merged_dataset_subset.csv"  # Path to the subset file
 
 # Load the datasets
 ale_mutations = pd.read_csv(ale_mutations_file, sep=';')
@@ -209,7 +209,7 @@ filtered_enhanced_data = enhanced_data[columns_to_keep]
 print("Filtered Enhanced Dataset:\n", filtered_enhanced_data.head())
 
 # Define the path for the output pickle file
-output_pickle_path = '/Users/josspa/GPS-M/Test/filtered_enhanced_data.pkl'
+output_pickle_path = '.../filtered_enhanced_data.pkl'
 
 # Save the filtered DataFrame to a pickle file
 filtered_enhanced_data.to_pickle(output_pickle_path)
