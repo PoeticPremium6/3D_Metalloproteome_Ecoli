@@ -4,6 +4,64 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Load the dataset
+df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\enriched_binding_and_annotations_5.csv')
+
+# Filter for MO-binding proteins
+df_mo = df[df['Metal_type'].str.contains('MO', na=False)]
+
+# Split the 'GO_Descriptions' into individual terms and explode the DataFrame for frequency analysis
+go_descriptions_series_mo = df_mo['GO_Descriptions'].str.split('; ').explode()
+go_descriptions_counts_mo = go_descriptions_series_mo.value_counts().nlargest(10)
+
+# Print the top 10 GO term descriptions by frequency
+print("Top Molybdenum 10 GO Term Descriptions by Frequency:")
+for term, count in go_descriptions_counts_mo.items():
+    print(f"{term}: {count}")
+(f"{row['GO_Descriptions']}: {row['close_mutations_count']}")
+
+# Prepare data for mean mutations count analysis
+go_terms_expanded_mo = df_mo.assign(GO_Descriptions=df_mo['GO_Descriptions'].str.split('; ')).explode('GO_Descriptions')
+mean_mutations_by_go_mo = go_terms_expanded_mo.groupby('GO_Descriptions')['close_mutations_count'].mean().reset_index()
+top_mean_mutations_by_go_mo = mean_mutations_by_go_mo.nlargest(10, 'close_mutations_count')
+
+# Function to wrap labels
+def wrap_labels(labels, width):
+    return ['\n'.join(textwrap.wrap(label, width)) for label in labels]
+# Create a figure with two subplots
+fig, axes = plt.subplots(1, 2, figsize=(20, 10))
+
+# Plot for Top 10 GO Descriptions by frequency
+sns.barplot(ax=axes[0], x=go_descriptions_counts_mo.values, y=wrap_labels(go_descriptions_counts_mo.index, 20), color='purple')
+#axes[0].set_title('Top 10 GO Term Descriptions by Frequency', fontsize=16, fontweight='bold')
+axes[0].set_xlabel('Frequency', fontsize=14, fontweight='bold')
+axes[0].set_ylabel('GO Term Descriptions', fontsize=14, fontweight='bold')
+axes[0].tick_params(axis='x', labelsize=12,  labelrotation=0, width=2)
+axes[0].tick_params(axis='y', labelsize=16, labelrotation=0, width=2)
+plt.setp(axes[0].get_xticklabels(), fontweight='bold')
+plt.setp(axes[0].get_yticklabels(), fontweight='bold')
+
+# Plot for Top 10 GO Term Descriptions by Mean Close Mutations Count
+sns.barplot(ax=axes[1], data=top_mean_mutations_by_go_mo, y=wrap_labels(top_mean_mutations_by_go_mo['GO_Descriptions'], 20), x='close_mutations_count', color='purple')
+#axes[1].set_title('Top 10 GO Term Descriptions by Mean Close Mutations Count', fontsize=16, fontweight='bold')
+axes[1].set_xlabel('Mean Close Mutations Count', fontsize=14, fontweight='bold')
+axes[1].set_ylabel('', fontsize=14, fontweight='bold')  # Keep ylabel empty but adjust font size and weight for consistency
+axes[1].tick_params(axis='x', labelsize=12, labelrotation=0, width=2)
+axes[1].tick_params(axis='y', labelsize=16, labelrotation=0, width=2)
+plt.setp(axes[1].get_xticklabels(), fontweight='bold')
+plt.setp(axes[1].get_yticklabels(), fontweight='bold')
+
+# Adjust layout
+plt.tight_layout()
+
+# Save the combined figure for Molybdenum (MO) analysis
+plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure6\\A_top_10_go_terms_combined_mo.png')
+plt.show()
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 # Load the enriched dataset
 df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\enriched_binding_and_annotations_5.csv')
 
