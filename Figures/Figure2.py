@@ -15,7 +15,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Load the binding data from your local system
-binding_df = pd.read_csv("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\binding_data_New.csv")  # Update the path as needed
+binding_df = pd.read_csv(".../binding_data_New.csv")  # Update the path as needed
 
 # Filter the dataframe for distances less than or equal to 5 Angstroms
 binding_df_filtered = binding_df[binding_df['Distance'] <= 5]
@@ -72,7 +72,7 @@ for text in legend.get_texts():
 plt.tight_layout()
 
 # Save the figure
-plt.savefig("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure2\\A_distance_distribution_equal_spread.png")  # Update the path as needed
+plt.savefig(".../A_distance_distribution_equal_spread.png")  # Update the path as needed
 
 # Show the plot
 plt.show()
@@ -83,7 +83,7 @@ from matplotlib.colors import LogNorm
 import pandas as pd
 
 # Load the binding data
-binding_df = pd.read_csv("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\binding_data_New.csv")  # Update the path as needed
+binding_df = pd.read_csv(".../binding_data_New.csv")  # Update the path as needed
 
 # Define distance thresholds without the last one (5 Å)
 thresholds = [0, 2, 3, 5]
@@ -172,7 +172,7 @@ clustermap.ax_heatmap.vlines(np.arange(1, pivot_table.shape[1]), *clustermap.ax_
 clustermap.ax_heatmap.tick_params(axis='both', which='major', length=0)
 
 # Save the figure to the specified path with reduced whitespace
-output_figure_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure2\\B_metal_distance_thresholds_clustered.png'
+output_figure_path = '.../B_metal_distance_thresholds_clustered.png'
 plt.savefig(output_figure_path, bbox_inches='tight', pad_inches=0.1)
 
 #Violin Plot of Distances for Each Residue:
@@ -182,7 +182,7 @@ import seaborn as sns
 import numpy as np
 
 # Load the binding data
-binding_df = pd.read_csv("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\binding_data_New.csv")  # Update the path as needed
+binding_df = pd.read_csv(".../binding_data_New.csv")  # Update the path as needed
 
 # Ensure only valid three-letter amino acid residues are considered
 amino_acids_3_letter = ['ALA', 'ARG', 'ASN', 'ASP', 'CYS', 'GLN', 'GLU', 'GLY', 'HIS', 'ILE',
@@ -220,14 +220,14 @@ plt.grid(True, linestyle='--', linewidth=0.6, alpha=0.5)
 plt.subplots_adjust(bottom=0.15)
 
 # Save the figure in high resolution for publication quality
-plt.savefig("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure2\\C_residue_distance_violin.png", dpi=300, bbox_inches='tight')
+plt.savefig(".../C_residue_distance_violin.png", dpi=300, bbox_inches='tight')
 plt.show()
 
 #More residue plots
 import pandas as pd
 
 # Load the binding data
-binding_df = pd.read_csv("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\binding_data_New.csv")  # Update the path as needed
+binding_df = pd.read_csv(".../binding_data_New.csv")  # Update the path as needed
 
 # Ensure only valid three-letter amino acid residues are considered
 amino_acids_3_letter = ['ALA', 'ARG', 'ASN', 'ASP', 'CYS', 'GLN', 'GLU', 'GLY', 'HIS', 'ILE', 'LEU', 'LYS', 'MET', 'PHE', 'PRO', 'SER', 'THR', 'TRP', 'TYR', 'VAL']
@@ -240,7 +240,7 @@ aggregated_df = binding_df.groupby(['Metal_type', 'Residue_name'])['Distance'].a
 aggregated_df.columns = ['Metal_type', 'Residue_name', 'Min_Distance', 'Max_Distance', 'Mean_Distance', 'Std_Deviation']
 
 # Save the aggregated data to a CSV file
-csv_output_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\aggregated_metal_aa_interactions.csv"
+csv_output_path = ".../aggregated_metal_aa_interactions.csv"
 aggregated_df.to_csv(csv_output_path, index=False)
 
 print(f"Aggregated CSV file has been saved to: {csv_output_path}")
@@ -294,10 +294,10 @@ plt.savefig(os.path.join(output_directory, "E_Mutations_Near_Metal.png"))
 plt.show()
 
 # Path to your file
-mutations_per_metal_file = "/Users/josspa/GPS-M/Version2/mutations_per_metal.pkl"
+mutations_per_metal_file = ".../mutations_per_metal.pkl"
 
 # Path to save the plot
-plot_save_path = "/Users/josspa/GPS-M/Figures/4.0/Figure2/D1_Count_Metal_Mutations.png"
+plot_save_path = ".../D1_Count_Metal_Mutations.png"
 
 def plot_data(df, save_path, fontsize=12, xlabel_fontweight='bold', ylabel_fontweight='bold', title_fontsize=14,
               title_fontweight='bold', tick_labelsize=10, tick_fontweight='bold'):
@@ -315,7 +315,7 @@ import pickle
 import matplotlib.pyplot as plt
 
 # Correct path to the pickle file
-pickle_file_path = "/Users/josspa/GPS-M/Version2/Distance_Mutations_MetalBinding.pkl"
+pickle_file_path = "...//Distance_Mutations_MetalBinding.pkl"
 
 # Load distances from the pickle file
 with open(pickle_file_path, 'rb') as f:
@@ -331,6 +331,6 @@ plt.grid(True, linestyle='--', alpha=0.5)  # Add grid lines for better data visi
 plt.xticks(fontsize=14, fontweight='bold')  # Bold x-axis tick labels
 plt.yticks(fontsize=14, fontweight='bold')  # Bold y-axis tick labels
 plt.tight_layout()
-plt.savefig("/Users/josspa/GPS-M/Figures/4.0/Figure2/D2_Distance_Mutations_MetalBinding.png", dpi=300)
+plt.savefig(".../D2_Distance_Mutations_MetalBinding.png", dpi=300)
 plt.show()
 
