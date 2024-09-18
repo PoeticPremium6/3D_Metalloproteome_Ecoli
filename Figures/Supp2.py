@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the dataset
-df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\enriched_binding_and_annotations_5.csv')
+df = pd.read_csv('.../enriched_binding_and_annotations_5.csv')
 
 # Split the 'GO_Descriptions' into individual terms and explode the DataFrame
 go_descriptions_series = df['GO_Descriptions'].str.split('; ').explode()
@@ -30,7 +30,7 @@ plt.yticks(fontsize=12, fontweight='bold')
 plt.tight_layout()
 plt.show()
 # Save the figure
-plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp2\\A_top_10_go_term_descriptions.png')
+plt.savefig('.../A_top_10_go_term_descriptions.png')
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -75,7 +75,7 @@ plt.xticks(fontsize=14, fontweight='bold')
 plt.yticks(fontsize=14, fontweight='bold')
 plt.tight_layout()
 
-plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp2\\B_top_10_go_term_descriptions_with_mean_mutation_count.png')
+plt.savefig('.../B_top_10_go_term_descriptions_with_mean_mutation_count.png')
 plt.show()
 
 import pandas as pd
@@ -83,7 +83,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the dataset
-df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\enriched_binding_and_annotations_5.csv')
+df = pd.read_csv('.../enriched_binding_and_annotations_5.csv')
 
 # Group by 'Metal_type' and calculate the mean 'close_mutations_count'
 metal_mutation_summary = df.groupby('Metal_type')['close_mutations_count'].mean().reset_index()
@@ -120,7 +120,7 @@ plt.yticks(fontsize=10, fontweight='bold')
 plt.tight_layout()  # Adjust the layout
 
 # Save the figure
-plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp2\\C_metal_type_vs_mutation_count.png')
+plt.savefig('.../C_metal_type_vs_mutation_count.png')
 
 plt.show()
 
@@ -158,7 +158,7 @@ plt.legend(title='Metal Type', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 
 # Specify the path where you want to save the figure
-figure_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp2\\D_overview_plot_with_distinct_colors.png'
+figure_path = '.../D_overview_plot_with_distinct_colors.png'
 plt.savefig(figure_path)  # Save the figure
 print(f"Figure saved to {figure_path}")
 
@@ -170,7 +170,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the dataset
-df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Updated_Targets_Casestudy_Unique.csv')
+df = pd.read_csv('.../Updated_Targets_Casestudy_Unique.csv')
 
 # Convert 'close_mutations_count' to a numeric data type, errors='coerce' will convert any problematic values to NaN
 df['close_mutations_count'] = pd.to_numeric(df['close_mutations_count'], errors='coerce')
@@ -193,7 +193,7 @@ if len(categories) > 1:
     plt.xticks(rotation=45, fontsize=12, fontweight='bold') # Rotate the x-axis labels for better readability
     plt.yticks(fontsize=10, fontweight='bold')
     plt.tight_layout()  # Adjust the layout
-    plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp2\\E_close_mutations_count_per_category.png')
+    plt.savefig('.../E_close_mutations_count_per_category.png')
     plt.show()
 else:
     print("Not enough categories for ANOVA.")
