@@ -106,7 +106,7 @@ plt.xticks(fontsize=12, fontweight='bold')
 plt.yticks(fontsize=12, fontweight='bold')
 plt.grid(True)
 plt.tight_layout()
-plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp3\\B_Distribution_of_Close_Mutation_Counts_Lead.png')
+plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp5\\B_Distribution_of_Close_Mutation_Counts_Lead.png')
 
 import pandas as pd
 import matplotlib.pyplot as plt
