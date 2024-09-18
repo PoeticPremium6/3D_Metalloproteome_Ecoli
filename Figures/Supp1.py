@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Path to your CSV file
-csv_file_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\binding_data_New.csv"
+csv_file_path = ".../binding_data_New.csv"
 
 # Read the CSV data into a DataFrame
 binding_df = pd.read_csv(csv_file_path)
@@ -44,7 +44,7 @@ ax.set_yticklabels(['{:,}'.format(int(y)) for y in ax.get_yticks()])
 plt.tight_layout()
 
 # Save the figure with reduced whitespace
-output_figure_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp1\\A_amino_acid_residue_distribution.png"
+output_figure_path = ".../A_amino_acid_residue_distribution.png"
 plt.savefig(output_figure_path, bbox_inches='tight', pad_inches=0.1)
 
 print(f"Figure saved to: {output_figure_path}")
@@ -57,7 +57,7 @@ import numpy as np
 import scipy  # Ensure scipy is installed
 
 # Path to your CSV file
-csv_file_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\binding_data_New.csv"
+csv_file_path = ".../binding_data_New.csv"
 
 # Read the CSV data into a DataFrame
 binding_df = pd.read_csv(csv_file_path)
@@ -95,7 +95,7 @@ cbar.yaxis.label.set_size(10)
 cbar.yaxis.label.set_weight('bold')
 
 # Save the figure
-output_figure_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp1\\B_amino_acid_metal_interaction_counts_clustermap.png"
+output_figure_path = ".../B_amino_acid_metal_interaction_counts_clustermap.png"
 plt.savefig(output_figure_path, bbox_inches='tight', pad_inches=0.1)
 
 
@@ -128,14 +128,14 @@ def process_non_metal_binding(file_path):
     return expand_domain_info(df, metal_type_column='Metal_type')
 
 # Process both datasets
-metal_binding_data = process_metal_binding('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_metals_final.csv')
-non_metal_binding_data = process_non_metal_binding('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_nonmetal.csv')
+metal_binding_data = process_metal_binding('.../refined_integrated_dataset_metals_final.csv')
+non_metal_binding_data = process_non_metal_binding('.../refined_integrated_dataset_nonmetal.csv')
 
 # Combine both datasets
 combined_data = pd.concat([metal_binding_data, non_metal_binding_data])
 
 # Save the combined dataset with a unique filename
-combined_data.to_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\metal_nonmetal_protein_domains.csv', index=False)
+combined_data.to_csv('.../metal_nonmetal_protein_domains.csv', index=False)
 
 print("Data processing completed. The expanded data is saved to metal_nonmetal_protein_domains.csv")
 
@@ -145,7 +145,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the protein domain data
-protein_domain_df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\metal_nonmetal_protein_domains.csv')
+protein_domain_df = pd.read_csv('.../metal_nonmetal_protein_domains.csv')
 
 # Replace missing values in 'Domains' with 'NA'
 protein_domain_df['Domains'] = protein_domain_df['Domains'].fillna('NA')
@@ -183,7 +183,7 @@ plt.ylabel('Protein Domains', fontsize=14, fontweight='bold')  # Y-axis title
 #plt.title('Log-Scale Heatmap of Top Protein Domain Abundance by Metal Type', fontsize=14, fontweight='bold')
 
 plt.tight_layout()
-plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp1\\C_Top_Protein_Domains.png', dpi=300, bbox_inches='tight')
+plt.savefig('.../C_Top_Protein_Domains.png', dpi=300, bbox_inches='tight')
 plt.show()
 
 #Let's analyze metal-binding proteins and their subcellular location
@@ -227,9 +227,9 @@ def process_non_metal_binding_data(file_path, output_path):
     location_counts.to_csv(os.path.join(output_path, 'non_metal_binding_subcellular_location_counts.csv'), index=False)
 
 # Paths to the input files and output directory
-metal_file_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_metals_final.csv'
-nonmetal_file_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_nonmetal.csv'
-output_dir = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission'
+metal_file_path = '.../refined_integrated_dataset_metals_final.csv'
+nonmetal_file_path = '.../refined_integrated_dataset_nonmetal.csv'
+output_dir = '.../'
 
 # Process both datasets
 process_metal_binding_data(metal_file_path, output_dir)
@@ -254,8 +254,8 @@ def read_and_process(file_path, metal_type=None):
     return df[['Metal_type', 'Subcellular_Location']]
 
 # Read the datasets
-metal_df = read_and_process('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\metal_binding_subcellular_location.csv')
-nonmetal_df = read_and_process('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\non_metal_binding_subcellular_location_counts.csv', 'non-metal')
+metal_df = read_and_process('.../metal_binding_subcellular_location.csv')
+nonmetal_df = read_and_process('.../non_metal_binding_subcellular_location_counts.csv', 'non-metal')
 
 # Combine the datasets
 combined_df = pd.concat([metal_df, nonmetal_df], ignore_index=True)
@@ -303,5 +303,5 @@ color_bar.ax.set_title('Count (log-scale)', pad=10, fontweight='bold')
 plt.tight_layout()
 
 # Save the figure to the desired path
-plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp1\\D_Subcellular_Location_Enhanced.png', dpi=300, bbox_inches='tight')
+plt.savefig('.../D_Subcellular_Location_Enhanced.png', dpi=300, bbox_inches='tight')
 plt.show()
