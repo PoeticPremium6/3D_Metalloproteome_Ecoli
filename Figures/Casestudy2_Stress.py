@@ -126,3 +126,47 @@ plt.tight_layout()
 # Save the figure - adjust the path as necessary
 plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp4\\C_Distribution_of_Mercury_Binding_Sites_With_Mutation_Counts_Colored_By_CaseStudy_Category_Log_Scale.png')
 plt.show()
+
+####
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Assuming 'data_path' and 'enriched_binding_data_path' are already defined and point to your CSV files
+data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Updated_Targets_Casestudy_Unique.csv'
+enriched_binding_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\enriched_binding_and_annotations_5.csv'
+
+# Load the datasets
+targets_df = pd.read_csv(data_path)
+enriched_df = pd.read_csv(enriched_binding_data_path)
+
+# Merge the datasets on 'Blattner Numbers'
+merged_df = pd.merge(targets_df, enriched_df, on='Blattner Numbers', suffixes=('_targets', '_enriched'))
+
+# Filter for Zinc (Zn) binding proteins in the merged dataset
+fe_binding_proteins = merged_df[merged_df['Metal_type_enriched'].str.contains('FE', na=False)]
+hg_binding_proteins = merged_df[merged_df['Metal_type_enriched'].str.contains('HG', na=False)]
+
+# Split the 'ALE_Experiment' column into separate rows for each unique experiment
+fe_binding_proteins_exploded = fe_binding_proteins.assign(ALE_Experiment=fe_binding_proteins['ALE_Experiment'].str.split(';')).explode('ALE_Experiment')
+hg_binding_proteins_exploded = hg_binding_proteins.assign(ALE_Experiment=hg_binding_proteins['ALE_Experiment'].str.split(';')).explode('ALE_Experiment')
+
+# Group by ALE experiments to see which ones are associated with high mutation counts in Zn-binding proteins
+ale_impact = fe_binding_proteins_exploded.groupby('ALE_Experiment')['close_mutations_count_enriched'].sum().reset_index()
+ale_impact = hg_binding_proteins_exploded.groupby('ALE_Experiment')['close_mutations_count_enriched'].sum().reset_index()
+
+# Sort the results to highlight the ALE experiments with the highest total mutation counts in Zn-binding proteins
+ale_impact_sorted = ale_impact.sort_values(by='close_mutations_count_enriched', ascending=False)
+
+# Visualizing the impact of ALE experiments on Zn-binding proteins
+plt.figure(figsize=(12, 8))
+sns.barplot(x='ALE_Experiment', y='close_mutations_count_enriched', data=ale_impact_sorted, color='purple')
+plt.title('Impact of ALE Experiments on Mutation Counts in Hg-Binding Proteins')
+plt.xlabel('ALE Experiment')
+plt.ylabel('Total Close Mutations Count')
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Save the figure
+plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp5\\D_Impact_of_ALE_Experiments_on_Hg_Proteins.png')
+plt.show()
