@@ -4,6 +4,72 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Load the dataset
+df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\enriched_binding_and_annotations_5.csv')
+
+# Filter for Fe-binding proteins
+df_fe = df[df['Metal_type'].str.contains('FE', na=False)]
+
+# Split the 'GO_Descriptions' into individual terms and explode the DataFrame for frequency analysis
+go_descriptions_series_fe = df_fe['GO_Descriptions'].str.split('; ').explode()
+go_descriptions_counts_fe = go_descriptions_series_fe.value_counts().nlargest(10)
+
+# Print the top 10 GO term descriptions by frequency
+print("Top 10 GO Term Descriptions by Frequency:")
+for term, count in go_descriptions_counts_fe.items():
+    print(f"{term}: {count}")
+
+# Prepare data for mean mutations count analysis
+go_terms_expanded_fe = df_fe.assign(GO_Descriptions=df_fe['GO_Descriptions'].str.split('; ')).explode('GO_Descriptions')
+mean_mutations_by_go_fe = go_terms_expanded_fe.groupby('GO_Descriptions')['close_mutations_count'].mean().reset_index()
+top_mean_mutations_by_go_fe = mean_mutations_by_go_fe.nlargest(10, 'close_mutations_count')
+
+# Print the top 10 GO term descriptions by mean close mutations count
+print("\nTop 10 GO Term Descriptions by Mean Close Mutations Count:")
+for index, row in top_mean_mutations_by_go_fe.iterrows():
+    print(f"{row['GO_Descriptions']}: {row['close_mutations_count']}")
+
+# Prepare data for mean mutations count analysis
+go_terms_expanded_fe = df_fe.assign(GO_Descriptions=df_fe['GO_Descriptions'].str.split('; ')).explode('GO_Descriptions')
+mean_mutations_by_go_fe = go_terms_expanded_fe.groupby('GO_Descriptions')['close_mutations_count'].mean().reset_index()
+top_mean_mutations_by_go_fe = mean_mutations_by_go_fe.nlargest(10, 'close_mutations_count')
+
+# Function to wrap labels
+def wrap_labels(labels, width):
+    return ['\n'.join(textwrap.wrap(label, width)) for label in labels]
+# Create a figure with two subplots
+fig, axes = plt.subplots(1, 2, figsize=(20, 10))
+
+# Plot for Top 10 GO Descriptions by frequency
+sns.barplot(ax=axes[0], x=go_descriptions_counts_fe.values, y=wrap_labels(go_descriptions_counts_fe.index, 20), color='purple')
+#axes[0].set_title('Top 10 GO Term Descriptions by Frequency', fontsize=16, fontweight='bold')
+axes[0].set_xlabel('Frequency', fontsize=14, fontweight='bold')
+axes[0].set_ylabel('GO Term Descriptions', fontsize=14, fontweight='bold')
+axes[0].tick_params(axis='x', labelsize=12,  labelrotation=0, width=2)
+axes[0].tick_params(axis='y', labelsize=16, labelrotation=0, width=2)
+plt.setp(axes[0].get_xticklabels(), fontweight='bold')
+plt.setp(axes[0].get_yticklabels(), fontweight='bold')
+
+# Plot for Top 10 GO Term Descriptions by Mean Close Mutations Count
+sns.barplot(ax=axes[1], data=top_mean_mutations_by_go_fe, y=wrap_labels(top_mean_mutations_by_go_fe['GO_Descriptions'], 20), x='close_mutations_count', color='purple')
+#axes[1].set_title('Top 10 GO Term Descriptions by Mean Close Mutations Count', fontsize=16, fontweight='bold')
+axes[1].set_xlabel('Mean Close Mutations Count', fontsize=14, fontweight='bold')
+axes[1].set_ylabel('', fontsize=14, fontweight='bold')  # Keep ylabel empty but adjust font size and weight for consistency
+axes[1].tick_params(axis='x', labelsize=12, labelrotation=0, width=2)
+axes[1].tick_params(axis='y', labelsize=16, labelrotation=0, width=2)
+plt.setp(axes[1].get_xticklabels(), fontweight='bold')
+plt.setp(axes[1].get_yticklabels(), fontweight='bold')
+
+# Adjust layout
+plt.tight_layout()
+# Save the combined figure for Iron (Fe) analysis
+plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure5\\A_top_10_go_terms_combined_fe.png')
+###
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 # Load the enriched dataset
 df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\enriched_binding_and_annotations_5.csv')
 
