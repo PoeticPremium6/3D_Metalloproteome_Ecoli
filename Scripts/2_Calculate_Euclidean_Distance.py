@@ -24,7 +24,7 @@ def extract_uniprot_id_from_pdb(file_path):
                         return fields[uniprot_index + 1]
     return "Not_Found"
 
-pdb_directory = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\PDB_Total"
+pdb_directory = ".../PDB_Total"
 files = [f for f in os.listdir(pdb_directory) if f.endswith('.pdb')]
 
 # List of metals by their residue names in PDB files. You may need to update or modify this list.
@@ -76,7 +76,7 @@ for file in files:
                 })
 
 binding_df = pd.DataFrame(binding_data)
-binding_df.to_csv("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\binding_data_New.csv", index=False)
+binding_df.to_csv(".../binding_data_New.csv", index=False)
 
 non_metal_df = pd.DataFrame(non_metal_data)
-non_metal_df.to_csv("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\non_metal_data.csv", index=False)
+non_metal_df.to_csv(".../non_metal_data.csv", index=False)
