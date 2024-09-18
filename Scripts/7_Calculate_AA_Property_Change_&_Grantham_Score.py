@@ -3,9 +3,9 @@ import pandas as pd
 import re
 
 # File paths
-annotation_file_path = "/Users/josspa/GPS-M/cleaned_annotation_scored.csv"
-id_mapping_file_path = "/Users/josspa/GPS-M/Test/idmapping.tsv"
-metal_binding_file_path = "/Users/josspa/GPS-M/binding_data_New.csv"
+annotation_file_path = ".../cleaned_annotation_scored.csv"
+id_mapping_file_path = ".../idmapping.tsv"
+metal_binding_file_path = ".../binding_data_New.csv"
 
 # Amino acid properties
 aa_properties = {
@@ -113,4 +113,4 @@ filtered_df.dropna(subset=['Distance', 'Evol_AA_residue', 'Residue_number'], inp
 distance_criteria = [5, 10, 20]
 for distance in distance_criteria:
     filtered_distance_df = filtered_df[filtered_df['Distance'] <= distance]
-    filtered_distance_df.to_csv(f"/Users/josspa/GPS-M/processed_merged_data_distance_{distance}.csv", index=False)
+    filtered_distance_df.to_csv(f".../processed_merged_data_distance_{distance}.csv", index=False)
