@@ -4,9 +4,9 @@
 #This was extracted from http://www.mutfunc.com/
 import pandas as pd
 #Load up datasets for annotation
-binding_data = pd.read_csv("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\binding_data_New.csv")
-non_metal_data = pd.read_csv("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\non_metal_data.csv")
-ptm_data = pd.read_csv("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\MutFunc\\other_ptms.tab", sep='\t')  # Assuming it's tab-delimited
+binding_data = pd.read_csv(".../binding_data_New.csv")
+non_metal_data = pd.read_csv(".../non_metal_data.csv")
+ptm_data = pd.read_csv(".../MutFunc\\other_ptms.tab", sep='\t')  # Assuming it's tab-delimited
 
 #Begin merging datasets with post-translational modifications
 # Merge the PTM data with the binding data
@@ -47,7 +47,7 @@ plt.xticks(rotation=45, ha="right", rotation_mode="anchor")  # ha='right' aligns
 # Ensure layout is tight
 plt.tight_layout()
 # Save the plot
-save_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\PTM_Distribution_Comparison.png'
+save_path = '.../PTM_Distribution_Comparison.png'
 try:
     plt.savefig(save_path, format='png', dpi=300)
     print(f"Plot saved successfully at {save_path}")
@@ -62,10 +62,10 @@ import pandas as pd
 import csv
 
 # Define the path to the transcription factor disruption data
-tf_disruption_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\MutFunc\\tfbs.tab"
+tf_disruption_path = ".../MutFunc\\tfbs.tab"
 # Define paths to the mutation data
-ale_mutation_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Variants\\ALE_Mutations.csv"
-ltee_mutation_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Variants\\LTEE_Mutations.csv"
+ale_mutation_path = ".../ALE_Mutations.csv"
+ltee_mutation_path = ".../LTEE_Mutations.csv"
 
 # Function to parse mutation data
 def parse_mutation_data(file_path):
@@ -105,7 +105,7 @@ else:
     print(integrated_df.head())
 
     # Specify the path to save the CSV file
-    output_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\integrated_data.csv"
+    output_path = ".../integrated_data.csv"
 
     # Save the DataFrame as a CSV file
     integrated_df.to_csv(output_path, index=False)
@@ -120,8 +120,8 @@ else:
 import pandas as pd
 
 # Load your original CSV file
-input_file_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\integrated_data.csv"
-output_file_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\blattner_numbers.csv"
+input_file_path = ".../integrated_data.csv"
+output_file_path = ".../blattner_numbers.csv"
 
 # Read the CSV file
 df = pd.read_csv(input_file_path)
@@ -141,8 +141,8 @@ print(f"Blattner numbers have been saved to {output_file_path}.")
 import pandas as pd
 
 # Load the datasets
-integrated_data_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\integrated_data.csv"
-idmapping_data_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\idmapping.tsv"
+integrated_data_path = ".../integrated_data.csv"
+idmapping_data_path = ".../idmapping.tsv"
 
 integrated_df = pd.read_csv(integrated_data_path)
 idmapping_df = pd.read_csv(idmapping_data_path, sep='\t')
@@ -154,7 +154,7 @@ idmapping_df.rename(columns={'From': 'Blattner_Number'}, inplace=True)
 master_df = pd.merge(integrated_df, idmapping_df, on='Blattner_Number', how='left')
 
 # Save the merged dataset
-output_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\master_dataset.csv"
+output_path = ".../master_dataset.csv"
 master_df.to_csv(output_path, index=False)
 
 print("Merged dataset saved to", output_path)
@@ -163,8 +163,8 @@ print("Merged dataset saved to", output_path)
 import pandas as pd
 
 # Load the datasets
-master_dataset_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\master_dataset.csv"
-other_ptms_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\MutFunc\\other_ptms.tab"
+master_dataset_path = ".../master_dataset.csv"
+other_ptms_path = ".../MutFunc\\other_ptms.tab"
 
 master_dataset = pd.read_csv(master_dataset_path)
 other_ptms = pd.read_csv(other_ptms_path, sep="\t")  # other_ptms.tab is tab-separated
@@ -173,7 +173,7 @@ other_ptms = pd.read_csv(other_ptms_path, sep="\t")  # other_ptms.tab is tab-sep
 merged_dataset = pd.merge(master_dataset, other_ptms, left_on='Entry', right_on='acc', how='left')
 
 # Save the merged dataset
-output_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\merged_dataset.csv"
+output_path = ".../merged_dataset.csv"
 merged_dataset.to_csv(output_path, index=False)
 
 print("Merging completed. The merged dataset is saved at:", output_path)
@@ -182,7 +182,7 @@ print("Merging completed. The merged dataset is saved at:", output_path)
 import pandas as pd
 
 # Load the dataset
-dataset_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\merged_dataset.csv"
+dataset_path = ".../merged_dataset.csv"
 df = pd.read_csv(dataset_path)
 
 # Remove unnecessary columns (edit this list based on your requirements)
@@ -223,7 +223,7 @@ df = df[['Uniprot_ID', 'Gene_Names', 'Gene_Name', 'Locus_Tag', 'Gene_Length', 'E
          'Evol_Codon_Final', 'del_ratio', 'Database', 'Post-trans_Position', 'Post-trans_residue_type',
          'Post-trans_PMID', 'Post-trans_modified_residue', 'Post-trans_modification']]
 
-output_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\cleaned_annotation_file.csv"
+output_path = ".../cleaned_annotation_file.csv"
 df.to_csv(output_path, index=False)
 print("Cleaned file saved to", output_path)
 
