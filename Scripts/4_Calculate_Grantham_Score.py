@@ -87,18 +87,18 @@ def calculate_grantham_score(Evol_AA_orig, Evol_AA_final, matrix):
     return matrix.get((Evol_AA_orig, Evol_AA_final), 0)  # Returns 0 if combination not found
 
 # Load your dataset
-data_path =  "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\cleaned_annotation_file.csv"
+data_path =  ".../cleaned_annotation_file.csv"
 df = pd.read_csv(data_path, delimiter=',')
 
 df['Grantham_Score'] = df.apply(lambda row: calculate_grantham_score(row['Evol_AA_orig'], row['Evol_AA_final'], grantham_matrix), axis=1)
 
 # Save the updated dataset
-df.to_csv("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\cleaned_annotation_scored.csv", index=False)
+df.to_csv(".../cleaned_annotation_scored.csv", index=False)
 
 import pandas as pd
 
 # Load your dataset
-file_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\cleaned_annotation_scored.csv"  # Replace with your actual file path
+file_path = ".../cleaned_annotation_scored.csv"  # Replace with your actual file path
 df = pd.read_csv(file_path)
 
 # Calculate basic statistics
@@ -127,7 +127,7 @@ def categorize_score(score):
 df['Grantham_Category'] = df['Grantham_Score'].apply(categorize_score)
 
 # Saving the categorized data
-categorized_file_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\categorized_dataset.csv"  # Replace with your desired file path
+categorized_file_path = ".../categorized_dataset.csv"  # Replace with your desired file path
 df.to_csv(categorized_file_path, index=False)
 
 print("Categorized data saved to", categorized_file_path)
