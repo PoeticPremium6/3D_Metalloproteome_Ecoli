@@ -3,6 +3,75 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import textwrap
+
+
+# Load the dataset
+df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\enriched_binding_and_annotations_5.csv')
+
+# Filter for Zn-binding proteins
+df_zn = df[df['Metal_type'].str.contains('ZN', na=False)]
+
+# Split the 'GO_Descriptions' into individual terms and explode the DataFrame for frequency analysis
+go_descriptions_series_zn = df_zn['GO_Descriptions'].str.split('; ').explode()
+go_descriptions_counts_zn = go_descriptions_series_zn.value_counts().nlargest(10)
+
+# Print the top 10 GO term descriptions by frequency
+print("Top 10 GO Term Descriptions by Frequency:")
+for term, count in go_descriptions_counts_zn.items():
+    print(f"{term}: {count}")
+
+# Prepare data for mean mutations count analysis
+go_terms_expanded_zn = df_zn.assign(GO_Descriptions=df_zn['GO_Descriptions'].str.split('; ')).explode('GO_Descriptions')
+mean_mutations_by_go_zn = go_terms_expanded_zn.groupby('GO_Descriptions')['close_mutations_count'].mean().reset_index()
+top_mean_mutations_by_go_zn = mean_mutations_by_go_zn.nlargest(10, 'close_mutations_count')
+
+# Print the top 10 GO term descriptions by mean close mutations count
+print("\nTop 10 GO Term Descriptions by Mean Close Mutations Count:")
+for index, row in top_mean_mutations_by_go_zn.iterrows():
+    print(f"{row['GO_Descriptions']}: {row['close_mutations_count']}")
+
+# Prepare data for mean mutations count analysis
+go_terms_expanded_zn = df_zn.assign(GO_Descriptions=df_zn['GO_Descriptions'].str.split('; ')).explode('GO_Descriptions')
+mean_mutations_by_go_zn = go_terms_expanded_zn.groupby('GO_Descriptions')['close_mutations_count'].mean().reset_index()
+top_mean_mutations_by_go_zn = mean_mutations_by_go_zn.nlargest(10, 'close_mutations_count')
+
+# Function to wrap labels
+def wrap_labels(labels, width):
+    return ['\n'.join(textwrap.wrap(label, width)) for label in labels]
+# Create a figure with two subplots
+fig, axes = plt.subplots(1, 2, figsize=(20, 10))
+
+# Plot for Top 10 GO Descriptions by frequency
+sns.barplot(ax=axes[0], x=go_descriptions_counts_zn.values, y=wrap_labels(go_descriptions_counts_zn.index, 20), color='purple')
+#axes[0].set_title('Top 10 GO Term Descriptions by Frequency', fontsize=16, fontweight='bold')
+axes[0].set_xlabel('Frequency', fontsize=14, fontweight='bold')
+axes[0].set_ylabel('GO Term Descriptions', fontsize=14, fontweight='bold')
+axes[0].tick_params(axis='x', labelsize=12,  labelrotation=0, width=2)
+axes[0].tick_params(axis='y', labelsize=16, labelrotation=0, width=2)
+plt.setp(axes[0].get_xticklabels(), fontweight='bold')
+plt.setp(axes[0].get_yticklabels(), fontweight='bold')
+
+# Plot for Top 10 GO Term Descriptions by Mean Close Mutations Count
+sns.barplot(ax=axes[1], data=top_mean_mutations_by_go_zn, y=wrap_labels(top_mean_mutations_by_go_zn['GO_Descriptions'], 20), x='close_mutations_count', color='purple')
+#axes[1].set_title('Top 10 GO Term Descriptions by Mean Close Mutations Count', fontsize=16, fontweight='bold')
+axes[1].set_xlabel('Mean Close Mutations Count', fontsize=14, fontweight='bold')
+axes[1].set_ylabel('', fontsize=14, fontweight='bold')  # Keep ylabel empty but adjust font size and weight for consistency
+axes[1].tick_params(axis='x', labelsize=12, labelrotation=0, width=2)
+axes[1].tick_params(axis='y', labelsize=16, labelrotation=0, width=2)
+plt.setp(axes[1].get_xticklabels(), fontweight='bold')
+plt.setp(axes[1].get_yticklabels(), fontweight='bold')
+
+# Adjust layout
+plt.tight_layout()
+
+# Save the combined figure
+plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure4\\A_top_10_go_terms_combined_zn.png')
+plt.show()
+###
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Load the enriched dataset
 df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\enriched_binding_and_annotations_5.csv')
@@ -159,3 +228,60 @@ plt.legend(title='Case Study Category', title_fontsize='13', fontsize='12', fram
 # Save the figure - adjust the path as necessary
 plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Supp3\\C_Distribution_of_Magnesium_Binding_Sites_With_Mutation_Counts_Colored_By_CaseStudy_Category_Log_Scale.png')
 plt.show()
+
+# Assuming 'data_path' and 'enriched_binding_data_path' are already defined and point to your CSV files
+data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Updated_Targets_Casestudy_Unique.csv'
+enriched_binding_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\enriched_binding_and_annotations_5.csv'
+
+# Load the datasets
+targets_df = pd.read_csv(data_path)
+enriched_df = pd.read_csv(enriched_binding_data_path)
+
+# Merge the datasets on 'Blattner Numbers'
+merged_df = pd.merge(targets_df, enriched_df, on='Blattner Numbers', suffixes=('_targets', '_enriched'))
+
+# Filter for Zinc (Zn) binding proteins in the merged dataset
+zn_binding_proteins = merged_df[merged_df['Metal_type_enriched'].str.contains('ZN', na=False)]
+mg_binding_proteins = merged_df[merged_df['Metal_type_enriched'].str.contains('MG', na=False)]
+
+# Split the 'ALE_Experiment' column into separate rows for each unique experiment
+zn_binding_proteins_exploded = zn_binding_proteins.assign(ALE_Experiment=zn_binding_proteins['ALE_Experiment'].str.split(';')).explode('ALE_Experiment')
+mg_binding_proteins_exploded = mg_binding_proteins.assign(ALE_Experiment=mg_binding_proteins['ALE_Experiment'].str.split(';')).explode('ALE_Experiment')
+
+# Group by ALE experiments to see which ones are associated with high mutation counts in Zn-binding proteins
+ale_impact = zn_binding_proteins_exploded.groupby('ALE_Experiment')['close_mutations_count_enriched'].sum().reset_index()
+ale_impact = mg_binding_proteins_exploded.groupby('ALE_Experiment')['close_mutations_count_enriched'].sum().reset_index()
+
+# Sort the results to highlight the ALE experiments with the highest total mutation counts in Zn-binding proteins
+ale_impact_sorted = ale_impact.sort_values(by='close_mutations_count_enriched', ascending=False)
+
+# Visualizing the impact of ALE experiments on Zn-binding proteins
+plt.figure(figsize=(12, 8))
+# Create barplot with purple bars
+sns.barplot(x='ALE_Experiment', y='close_mutations_count_enriched', data=ale_impact_sorted, color='purple')
+# Customize labels, ticks, and figure settings
+plt.xlabel('ALE Experiment', fontsize=12, fontweight='bold')
+plt.ylabel('Total Close Mutations Count', fontsize=12, fontweight='bold')
+plt.xticks(rotation=45, fontsize=12, fontweight='bold', ha='right')
+plt.yticks(fontsize=12, fontweight='bold')
+plt.tight_layout()
+
+# Save the figure
+plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure4\\D_Impact_of_ALE_Experiments_on_Zn_Proteins.png')
+plt.show()
+
+# Group by ALE experiments to see which ones are associated with high mutation counts in Zn-binding proteins
+zn_ale_impact = zn_binding_proteins_exploded.groupby('ALE_Experiment')['close_mutations_count_enriched'].sum().reset_index()
+zn_ale_impact_sorted = zn_ale_impact.sort_values(by='close_mutations_count_enriched', ascending=False)
+
+# Group by ALE experiments to see which ones are associated with high mutation counts in Mg-binding proteins
+mg_ale_impact = mg_binding_proteins_exploded.groupby('ALE_Experiment')['close_mutations_count_enriched'].sum().reset_index()
+mg_ale_impact_sorted = mg_ale_impact.sort_values(by='close_mutations_count_enriched', ascending=False)
+
+# Print analytics for Zn-binding proteins
+print("Analytics for Zn-binding proteins:")
+print(zn_ale_impact_sorted.head(10))
+
+# Print analytics for Mg-binding proteins
+print("\nAnalytics for Mg-binding proteins:")
+print(mg_ale_impact_sorted.head(10))
