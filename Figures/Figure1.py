@@ -2,8 +2,8 @@
 #Let's start making Figure 1
 #We can start with a piechart
 # Load the data from the CSV files
-binding_df = pd.read_csv("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\binding_data_New.csv")
-non_metal_df = pd.read_csv("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\non_metal_data.csv")
+binding_df = pd.read_csv(".../binding_data_New.csv")
+non_metal_df = pd.read_csv(".../non_metal_data.csv")
 
 # Find unique PDB_names in each DataFrame
 unique_binding = binding_df['PDB_name'].unique()
@@ -43,7 +43,7 @@ plt.pie(sizes, labels=labels, colors=colors, autopct=lambda pct: func(pct, sizes
 plt.axis('equal')  # Equal aspect ratio ensures that pie chart is drawn as a circle.
 
 # Save the figure to your specified directory
-figure_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure1\\PiechartA.png"
+figure_path = ".../PiechartA.png"
 plt.savefig(figure_path, bbox_inches='tight')
 
 # Show the plot
@@ -55,7 +55,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Path to your CSV file
-csv_file_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\binding_data_New.csv"
+csv_file_path = ".../binding_data_New.csv"
 
 # Read the CSV data into a DataFrame, set low_memory=False to prevent DtypeWarning
 binding_df = pd.read_csv(csv_file_path, low_memory=False)
@@ -101,7 +101,7 @@ for i, (wedge, label) in enumerate(zip(wedges, labels)):
 plt.axis('equal')  # Equal aspect ratio ensures that pie chart is drawn as a circle.
 
 # Save the figure
-output_figure_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure1\\PiechartB.png"
+output_figure_path = ".../PiechartB.png"
 plt.savefig(output_figure_path, bbox_inches='tight')
 
 
@@ -110,7 +110,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the dataset
-file_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\binding_data_New.csv'
+file_path = '.../binding_data_New.csv'
 data = pd.read_csv(file_path)
 
 # Count the total metal binding sites per metal
@@ -129,7 +129,7 @@ plt.ylabel('Number of Binding Sites (Log Scale)', fontsize=16, fontweight='bold'
 plt.xticks(rotation=45, fontsize=14, fontweight='bold')
 plt.yticks(fontsize=14, fontweight='bold')
 # Save the log-scaled bar plot
-log_distribution_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure1\\B_metal_binding_sites_log_distribution.png'  # Adjust this path as necessary
+log_distribution_path = '.../B_metal_binding_sites_log_distribution.png'  # Adjust this path as necessary
 plt.savefig(log_distribution_path)
 plt.close()
 
@@ -143,9 +143,9 @@ import numpy as np
 import os
 
 # Load the datasets
-metals_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_metals_final.csv'
-non_metals_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_nonmetal.csv'
-ec_class_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\EC_Class.csv'
+metals_data_path = '.../refined_integrated_dataset_metals_final.csv'
+non_metals_data_path = '.../refined_integrated_dataset_nonmetal.csv'
+ec_class_path = '.../EC_Class.csv'
 
 metals_data = pd.read_csv(metals_data_path)
 non_metals_data = pd.read_csv(non_metals_data_path)
@@ -219,7 +219,7 @@ plt.legend(title='Types', fontsize=16)
 plt.tight_layout()
 
 # Saving the plot
-figures_directory = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure1\\'
+figures_directory = '.../'
 if not os.path.exists(figures_directory):
     os.makedirs(figures_directory)
 
@@ -252,9 +252,9 @@ def process_dataset(file_path, output_path, is_metal=True):
     df.to_csv(output_path, index=False)
 
 # Paths to the input files and output directory
-metal_file_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_metals_final.csv'
-nonmetal_file_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_nonmetal.csv'
-output_dir = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\'
+metal_file_path = '.../refined_integrated_dataset_metals_final.csv'
+nonmetal_file_path = '.../refined_integrated_dataset_nonmetal.csv'
+output_dir = '.../'
 
 # Process both datasets
 process_dataset(metal_file_path, f'{output_dir}processed_metals.csv', is_metal=True)
@@ -276,8 +276,8 @@ def combine_datasets(metal_path, nonmetal_path):
     return pd.concat([metal_df, nonmetal_df], ignore_index=True)
 
 # Read and combine the datasets
-combined_df = combine_datasets('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\processed_metals.csv',
-                               'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\processed_nonmetals.csv')
+combined_df = combine_datasets('.../processed_metals.csv',
+                               '.../processed_nonmetals.csv')
 
 # Aggregate the data by 'Metal_type' and 'Metabolic_Pathway' and count the occurrences
 aggregated_df = combined_df.groupby(['Metal_type', 'Metabolic_Pathway']).size().reset_index(name='Count')
@@ -307,7 +307,7 @@ color_bar.ax.set_title('Count (log-scale)', fontsize=16, fontweight='bold', pad=
 plt.tight_layout()
 
 # Save the figure to the desired path
-plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure1\\D_Kegg_Pathways.png')
+plt.savefig('.../D_Kegg_Pathways.png')
 plt.show()
 
 #Let's plot a description of the top-10 GO term Descriptions for each category for metals vs. non-metal
@@ -318,8 +318,8 @@ import textwrap
 from matplotlib.ticker import MaxNLocator
 
 # Load the datasets for metals and non-metals
-metals_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\merged_metals_data.csv'
-non_metals_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\merged_non_metals_data.csv'
+metals_data_path = '.../merged_metals_data.csv'
+non_metals_data_path = '.../merged_non_metals_data.csv'
 
 # Read the data
 metals_data = pd.read_csv(metals_data_path)
