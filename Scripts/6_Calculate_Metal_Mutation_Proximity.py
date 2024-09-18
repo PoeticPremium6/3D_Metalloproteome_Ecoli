@@ -9,12 +9,12 @@ from collections import defaultdict
 import math
 
 # Directories for input and output data
-binding_data_file = "/mnt/data/project0032/Metalloproteome/Final/binding_data_New.csv"
+binding_data_file = ".../binding_data_New.csv"
 mutation_files = [
-    "/mnt/data/project0032/Metalloproteome/Final/Variants/ALE_Mutations.csv",
-    "/mnt/data/project0032/Metalloproteome/Final/Variants/LTEE_Mutations.csv"
+    ".../ALE_Mutations.csv",
+    ".../LTEE_Mutations.csv"
 ]
-output_directory = "/mnt/data/project0032/Metalloproteome/Final/New_Output"
+output_directory = ".../"
 if not os.path.exists(output_directory):
     os.makedirs(output_directory)
 
