@@ -22,14 +22,14 @@ def merge_datasets_in_chunks(metal_binding_path, master_annotation_path, chunksi
     return pd.concat(merged_chunks)
 
 # Paths to your datasets
-metal_binding_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\binding_data_New.csv"
-master_annotation_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\categorized_dataset.csv"
+metal_binding_path = ".../binding_data_New.csv"
+master_annotation_path = ".../categorized_dataset.csv"
 
 # Merge datasets in chunks
 refined_df = merge_datasets_in_chunks(metal_binding_path, master_annotation_path)
 
 # Saving the output
-output_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_metals_final.csv"
+output_path = ".../refined_integrated_dataset_metals_final.csv"
 refined_df.to_csv(output_path, index=False)
 print("Refined integrated dataset saved to", output_path)
 
@@ -55,13 +55,13 @@ def merge_datasets_in_chunks(metal_binding_path, master_annotation_path, chunksi
     return pd.concat(merged_chunks)
 
 # Paths to your datasets
-metal_binding_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\non_metal_data.csv"
-master_annotation_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\categorized_dataset.csv"
+metal_binding_path = ".../non_metal_data.csv"
+master_annotation_path = ".../categorized_dataset.csv"
 
 # Merge datasets in chunks
 refined_df = merge_datasets_in_chunks(metal_binding_path, master_annotation_path)
 
 # Saving the output
-output_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_nonmetal.csv"
+output_path = ".../refined_integrated_dataset_nonmetal.csv"
 refined_df.to_csv(output_path, index=False)
 print("Refined integrated dataset saved to", output_path)
