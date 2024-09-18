@@ -20,8 +20,8 @@ def filter_metal_binding_sites(input_csv_path, output_csv_path):
     # Save the filtered dataset to a new CSV file
     filtered_df.to_csv(output_csv_path, index=False)
 if __name__ == "__main__":
-    input_csv_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\binding_data_New.csv'  # Update this path to your actual CSV file path
-    output_csv_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\filtered_binding_data.csv'  # Update this to your desired output file path
+    input_csv_path = '.../binding_data_New.csv'  # Update this path to your actual CSV file path
+    output_csv_path = '.../filtered_binding_data.csv'  # Update this to your desired output file path
 
     filter_metal_binding_sites(input_csv_path, output_csv_path)
     print("Filtered dataset saved to:", output_csv_path)
@@ -49,18 +49,18 @@ def merge_with_blattner_numbers_and_drop_unmatched(filtered_csv_path, id_mapping
     # Save the merged and filtered dataset to a new CSV file
     final_df.to_csv(output_csv_path, index=False)
 if __name__ == "__main__":
-    filtered_csv_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\filtered_binding_data.csv'  # Update this path
-    id_mapping_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\idmapping.tsv'  # Update this path
-    output_csv_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\merged_binding_data_with_blattner_filtered.csv'  # Update this to your desired output file path
+    filtered_csv_path = '.../filtered_binding_data.csv'  # Update this path
+    id_mapping_path = '.../idmapping.tsv'  # Update this path
+    output_csv_path = '.../merged_binding_data_with_blattner_filtered.csv'  # Update this to your desired output file path
 
     merge_with_blattner_numbers_and_drop_unmatched(filtered_csv_path, id_mapping_path, output_csv_path)
     print("Merged and filtered dataset saved to:", output_csv_path)
 
 import pandas as pd
 # Load the datasets
-filtered_binding_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\merged_binding_data_with_blattner_filtered.csv'
-ale_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\ALE_Mutations.csv'
-ltee_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\LTEE_Mutations.csv'
+filtered_binding_data_path = '.../merged_binding_data_with_blattner_filtered.csv'
+ale_data_path = '.../ALE_Mutations.csv'
+ltee_data_path = '.../LTEE_Mutations.csv'
 
 binding_df = pd.read_csv(filtered_binding_data_path)
 ale_df = pd.read_csv(ale_data_path, sep=';')
@@ -94,7 +94,7 @@ binding_df['close_mutations_count'] = binding_df.apply(
 filtered_binding_df = binding_df[binding_df['close_mutations_count'] > 0]
 
 # Save the filtered dataset to a new CSV file
-output_filtered_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\filtered_binding_data_with_mutation_counts.csv'
+output_filtered_path = '.../filtered_binding_data_with_mutation_counts.csv'
 filtered_binding_df.to_csv(output_filtered_path, index=False)
 
 print(f"Filtered dataset saved to {output_filtered_path}")
@@ -107,7 +107,7 @@ average_mutation_counts = binding_df.groupby('Blattner Numbers')['close_mutation
 print("Gene Name and Average Close Mutation Count:")
 print(average_mutation_counts)
 
-output_filtered_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Mutated_Metalloproteins.csv'
+output_filtered_path = '.../Mutated_Metalloproteins.csv'
 average_mutation_counts.to_csv(output_filtered_path, index=True)
 #Now let's begin to merge our Mutated metalloproteins with annotations
 def merge_datasets_in_chunks(metal_binding_path, master_annotation_path, chunksize=10000):
@@ -141,9 +141,9 @@ def merge_datasets_in_chunks(metal_binding_path, master_annotation_path, chunksi
 import pandas as pd
 
 # Paths to your datasets
-metal_binding_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\filtered_binding_data_with_mutation_counts.csv'
-master_annotation_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\categorized_dataset.csv'
-ec_class_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\EC_Class.csv'
+metal_binding_path = '.../filtered_binding_data_with_mutation_counts.csv'
+master_annotation_path = '.../categorized_dataset.csv'
+ec_class_path = '.../EC_Class.csv'
 
 # Merge the metal binding/mutation data with the master annotation dataset
 refined_df = merge_datasets_in_chunks(metal_binding_path, master_annotation_path)
@@ -156,7 +156,7 @@ ec_class_df = pd.read_csv(ec_class_path)
 refined_df = pd.merge(refined_df, ec_class_df, left_on='EC_Number', right_on='EC_Number', how='left')
 
 # Define the path for the output CSV file
-output_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\refined_binding_and_annotations.csv'
+output_path = '.../efined_binding_and_annotations.csv'
 
 # Save the refined DataFrame to a CSV file
 refined_df.to_csv(output_path, index=False)
@@ -167,13 +167,12 @@ print(f'Refined dataset saved to: {output_path}')
 import pandas as pd
 
 # Load the main dataset
-main_df_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_binding_and_annotations.csv'
+main_df_path = '.../refined_binding_and_annotations.csv'
 main_df = pd.read_csv(main_df_path)
 
 # Load the GO terms annotations
-go_terms_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\annotated_metals_go_terms.csv'
+go_terms_path = '.../annotated_metals_go_terms.csv'
 go_terms_df = pd.read_csv(go_terms_path)
-
 
 # Function to map GO terms to their descriptions and categories
 def map_go_terms(row, go_terms_df):
@@ -197,7 +196,7 @@ def map_go_terms(row, go_terms_df):
 main_df = main_df.apply(lambda row: map_go_terms(row, go_terms_df), axis=1)
 
 # Define the path for the enriched output CSV file
-enriched_output_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\enriched_binding_and_annotations_5.csv'
+enriched_output_path = '.../nriched_binding_and_annotations_5.csv'
 
 # Save the enriched DataFrame to a CSV file
 main_df.to_csv(enriched_output_path, index=False)
