@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
-base_directory = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\'  # Adjust this path if necessary
+base_directory = '.../'  # Adjust this path if necessary
 
 # Load data
 def load_data(file_path):
