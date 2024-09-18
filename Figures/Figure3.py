@@ -9,9 +9,9 @@ metal_columns = ['UniProt_ID', 'Gene_Length', 'Metal_type']  # Add any other rel
 non_metal_columns = ['UniProt_ID', 'Gene_Length']  # Adjust for non-metal data
 
 # Load only necessary columns from the datasets
-metal_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_metals_final.csv'
-non_metal_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_nonmetal.csv'
-mutation_data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\categorized_dataset.csv'
+metal_data_path = '.../refined_integrated_dataset_metals_final.csv'
+non_metal_data_path = '.../refined_integrated_dataset_nonmetal.csv'
+mutation_data_path = '.../categorized_dataset.csv'
 
 metal_data = pd.read_csv(metal_data_path, usecols=metal_columns, low_memory=False)
 non_metal_data = pd.read_csv(non_metal_data_path, usecols=non_metal_columns, low_memory=False)
@@ -62,7 +62,7 @@ plt.xticks(rotation=45)
 plt.yticks(rotation=0)  # Ensure the y-axis labels are horizontal
 
 # Save the figure (commented out for now)
- plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure3\\A_Mutation_Rate_Heatmap_Log_Scale.png')
+ plt.savefig('.../A_Mutation_Rate_Heatmap_Log_Scale.png')
 # Show the heatmap
 plt.tight_layout()
 plt.show()
@@ -71,8 +71,8 @@ plt.show()
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-data_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\processed_merged_data_distance_5.csv'
-output_dir = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure3\\"
+data_path = '.../processed_merged_data_distance_5.csv'
+output_dir = ".../"
 distance = 5.0
 
 def categorize_score(score):
@@ -130,9 +130,9 @@ def plot_mutations(data_path, output_dir, distance):
 
 # File paths for different distances
 file_paths = {
-    5: "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\processed_merged_data_distance_5.csv",
-    10: "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\processed_merged_data_distance_10.csv",
-    20: "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\processed_merged_data_distance_20.csv"
+    5: ".../processed_merged_data_distance_5.csv",
+    10: ".../processed_merged_data_distance_10.csv",
+    20: ".../processed_merged_data_distance_20.csv"
 }
 
 # Generate plots for each file
@@ -144,7 +144,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the dataset
-pickle_file_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\filtered_enhanced_data.pkl'
+pickle_file_path = '.../filtered_enhanced_data.pkl'
 data = pd.read_pickle(pickle_file_path)
 
 # Convert 'impact' to boolean for easier calculations
@@ -174,7 +174,7 @@ disruption_metal = data.groupby('Metal_type').apply(calculate_disruption_proport
 disruption_metal = disruption_metal.reset_index(name='Disruption_Proportion')
 
 # Define directory to save figures
-figures_dir = '/Users/josspa/GPS-M/Figures/4.0/Figure3'
+figures_dir = '.../'
 
 # Plotting
 sns.set(style="whitegrid")
@@ -201,7 +201,7 @@ plt.close()
 disruption_metal_sorted = disruption_metal.sort_values('Disruption_Proportion', ascending=False)
 
 # Assuming 'disruption_metal_sorted' is a predefined list or array
-figures_dir = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure3\\'
+figures_dir = '.../'
 
 # Create barplot with single color (purple)
 plt.figure(figsize=(12, 8))
@@ -220,7 +220,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load up datasets
-base_directory = '/Users/josspa/GPS-M/'
+base_directory = '.../'
 binding_data = pd.read_csv(base_directory + 'binding_data_New.csv')
 non_metal_data = pd.read_csv(base_directory + 'non_metal_data.csv')
 ptm_data = pd.read_csv(base_directory + 'MutFunc/other_ptms.tab', sep='\t')  # Assuming it's tab-delimited
@@ -279,7 +279,7 @@ ax.legend()
 plt.tight_layout()
 
 # Save the plot
-save_path = base_directory + 'Figures/4.0/Figure3/E_PTM_Distribution_Comparison_Grouped.png'
+save_path = base_directory + '.../E_PTM_Distribution_Comparison_Grouped.png'
 plt.savefig(save_path, format='png', dpi=300)
 plt.show()
 
@@ -288,7 +288,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the data
-file_path = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Final\\Results\\PPI_Metal_Binding_Analysis.csv"
+file_path = ".../PPI_Metal_Binding_Analysis.csv"
 data = pd.read_csv(file_path)
 
 # Drop duplicate rows
@@ -348,5 +348,5 @@ ax1.tick_params(axis='y', labelcolor='purple')
 plt.legend(loc='upper left')
 
 # Save the plot
-plt.savefig("C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure3\\Integrated_Plot.png", bbox_inches='tight', dpi=300)
+plt.savefig(".../Integrated_Plot.png", bbox_inches='tight', dpi=300)
 plt.close()
