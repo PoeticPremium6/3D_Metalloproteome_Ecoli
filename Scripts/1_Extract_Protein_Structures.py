@@ -40,13 +40,13 @@ def download_pdb(pdb_id, download_dir="."):
         except HTTPError as e_cif:
             print(f"Error downloading both {pdb_id}.pdb and {pdb_id}.cif: {e_cif}")
 # Path to your CSV file
-csv_file = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\rcsb_pdb_ids_Ecoli.csv"
+csv_file = ".../rcsb_pdb_ids_Ecoli.csv"
 df = pd.read_csv(csv_file)
 
 # Extract PDB Names
 pdb_names = df['PDB_Names'].tolist()
 
-download_directory = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\PDB_Total"
+download_directory = ".../PDB_Total"
 for pdb_name in pdb_names:
     download_pdb(pdb_name, download_directory)
 
@@ -90,7 +90,7 @@ if __name__ == "__main__":
 import os
 import gemmi
 
-pdb_directory = "C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\PDB_Total"
+pdb_directory = ".../PDB_Total"
 
 def rename_long_chain_ids(structure):
     """Rename chains that have identifiers too long for the PDB format."""
