@@ -156,6 +156,7 @@ file_paths = {
 for distance, file_path in file_paths.items():
     plot_mutations(file_path, output_dir, distance)
 
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -180,7 +181,7 @@ disruption_tf_experimental = data.groupby(['tf', 'Mutation_Category_Experimental
 disruption_tf_experimental = disruption_tf_experimental.reset_index(name='Disruption_Proportion')
 
 # Pivot the data to create a matrix for the heatmap
-heatmap_data = disruption_tf_experimental.pivot("Mutation_Category_Experimental", "tf", "Disruption_Proportion")
+heatmap_data = disruption_tf_experimental.pivot(index="Mutation_Category_Experimental", columns="tf", values="Disruption_Proportion")
 heatmap_data.fillna(0, inplace=True)  # Fill NaN values with zero
 
 # Reverse the order of the y-axis
@@ -196,22 +197,29 @@ figures_dir = '.../'
 # Plotting
 sns.set(style="whitegrid")
 
-# Adjust the figure size and aspect ratio
-fig, ax = plt.subplots(figsize=(28, 10))  # Increased width for better readability
+fig, ax = plt.subplots(figsize=(28, 12))  # Increased both width and height for better readability
 
 # Plot for Disruption by TF and Mutation Category (Experimental) as Heatmap
 heatmap = sns.heatmap(heatmap_data, ax=ax, cmap="viridis_r", cbar_kws={'label': 'Proportion of Disruption'}, linewidths=.5)
-#plt.title('Disruption Proportion by TF and Experimental Mutation Category')
-plt.xlabel('Transcription Factor', fontsize=14, fontweight='bold')
-plt.ylabel('Mutation Category (Experimental)', fontsize=14, fontweight='bold')
-plt.xticks(rotation=45, fontsize=16, fontweight='bold')
-plt.yticks(rotation=0, fontsize=15, fontweight='bold')
-plt.tight_layout()  # Adjust layout to fit everything properly
-# Customizing colorbar (legend) label
-cbar = heatmap.collections[0].colorbar
-cbar.set_label('Proportion of Disruption', fontsize=14, fontweight='bold')
 
-plt.savefig(f"{figures_dir}/C_Disruption_by_TF_Experimental_Mutation_Category_Heatmap.png")
+# Set the axis titles with bold and larger font sizes
+plt.xlabel('Transcription Factor', fontsize=18, fontweight='bold')
+plt.ylabel('Mutation Category (Experimental)', fontsize=18, fontweight='bold')
+
+# Customize the x-ticks and y-ticks for readability
+plt.xticks(rotation=45, fontsize=24, fontweight='bold', ha='right')  # Added 'ha' to rotate labels more neatly
+plt.yticks(rotation=0, fontsize=20, fontweight='bold')
+
+# Adjust the layout to make sure labels fit properly
+plt.tight_layout(pad=2.0)
+
+# Customize the colorbar (legend) label
+cbar = heatmap.collections[0].colorbar
+cbar.set_label('Proportion of Disruption', fontsize=16, fontweight='bold')
+cbar.ax.tick_params(labelsize=14, width=1.5)
+
+# Save the figure
+plt.savefig(f"{figures_dir}/C_Disruption_by_TF_Experimental_Mutation_Category_Heatmap.png", bbox_inches='tight')
 plt.close()
 
 # Plot for Metal Type
