@@ -348,12 +348,12 @@ def wrap_labels(ax, width, axis='y'):
     wrapped_labels = [textwrap.fill(label.get_text(), width) for label in labels]
 
     if axis == 'y':
-        ax.set_yticklabels(wrapped_labels)
+        ax.set_yticklabels(wrapped_labels, rotation=0, ha='right')
     elif axis == 'x':
-        ax.set_xticklabels(wrapped_labels)
+        ax.set_xticklabels(wrapped_labels, rotation=0, ha='right')
 
 # Start plotting
-fig, axes = plt.subplots(3, 2, figsize=(17, 18))  # Increased vertical size
+fig, axes = plt.subplots(3, 2, figsize=(20, 20))  # Increased width and kept height the same
 plt.subplots_adjust(hspace=1.5, wspace=0.8)  # Adjusted vertical and horizontal space
 
 for i, category in enumerate(categories):
@@ -363,9 +363,9 @@ for i, category in enumerate(categories):
     # Get the top 5 GO term descriptions for non-metal-binding genes
     top_non_metal_terms = get_top_n_go_terms(non_metals_data, category, n=5)
 
-    # Plot for metal-binding genes
-    ax1 = sns.barplot(y='Description', x='Count', data=top_metal_terms, ax=axes[i, 0], color='blue')
-    ax1.set_title(category, fontweight='bold', fontsize=15)
+    # Plot for metal-binding genes (Left column) - Purple color
+    ax1 = sns.barplot(y='Description', x='Count', data=top_metal_terms, ax=axes[i, 0], color='purple')
+    ax1.set_title(f'{category} - Metal-binding', fontweight='bold', fontsize=18)
     ax1.set_xscale('log')
     ax1.set_xlabel('Count (Log Scale)', fontweight='bold', fontsize=12)
     ax1.set_ylabel('', fontweight='bold', fontsize=12)
@@ -380,21 +380,18 @@ for i, category in enumerate(categories):
     # Set bold font properties for y-tick labels
     for tick in ax1.get_yticklabels():
         tick.set_fontweight('bold')
-        tick.set_fontsize(18)
+        tick.set_fontsize(22)
 
     # Set tick parameters for bold tick marks
     ax1.tick_params(axis='x', which='both', width=1.5)
     ax1.tick_params(axis='y', which='both', width=1.5)
 
     # Wrap y-tick labels
-    wrap_labels(ax1, width=26, axis='y')  # Adjust width as necessary
+    wrap_labels(ax1, width=26, axis='y')
 
-    # Reduce the number of y-ticks to prevent overlap
-    ax1.yaxis.set_major_locator(MaxNLocator(nbins=5))
-
-    # Plot for non-metal-binding genes
-    ax2 = sns.barplot(y='Description', x='Count', data=top_non_metal_terms, ax=axes[i, 1], color='orange')
-    ax2.set_title(category, fontweight='bold', fontsize=15)
+    # Plot for non-metal-binding genes (Right column) - Yellow color
+    ax2 = sns.barplot(y='Description', x='Count', data=top_non_metal_terms, ax=axes[i, 1], color='gray')
+    ax2.set_title(f'{category} - Non-metal-binding', fontweight='bold', fontsize=18)
     ax2.set_xscale('log')
     ax2.set_xlabel('Count (Log Scale)', fontweight='bold', fontsize=12)
     ax2.set_ylabel('', fontweight='bold', fontsize=12)
@@ -409,17 +406,14 @@ for i, category in enumerate(categories):
     # Set bold font properties for y-tick labels
     for tick in ax2.get_yticklabels():
         tick.set_fontweight('bold')
-        tick.set_fontsize(18)
+        tick.set_fontsize(22)
 
     # Set tick parameters for bold tick marks
     ax2.tick_params(axis='x', which='both', width=1.5)
     ax2.tick_params(axis='y', which='both', width=1.5)
 
     # Wrap y-tick labels
-    wrap_labels(ax2, width=16, axis='y')  # Adjust width as necessary
-
-    # Reduce the number of y-ticks to prevent overlap
-    ax2.yaxis.set_major_locator(MaxNLocator(nbins=5))
+    wrap_labels(ax2, width=26, axis='y')
 
 # Adjust layout with padding to prevent clipping of labels
 plt.tight_layout(pad=3.0, rect=[0.03, 0.03, 1, 1])  # Added padding to the left side
