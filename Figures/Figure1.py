@@ -104,7 +104,6 @@ plt.axis('equal')  # Equal aspect ratio ensures that pie chart is drawn as a cir
 output_figure_path = ".../PiechartB.png"
 plt.savefig(output_figure_path, bbox_inches='tight')
 
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -116,7 +115,6 @@ data = pd.read_csv(file_path)
 # Count the total metal binding sites per metal
 metal_counts = data['Metal_type'].value_counts()
 
-# Setting up the color palette
 # Setting up the color palette
 colors = sns.color_palette('viridis', len(metal_counts))  # Replace 'viridis' with your preferred palette
 
@@ -428,7 +426,7 @@ plt.tight_layout(pad=3.0, rect=[0.03, 0.03, 1, 1])  # Added padding to the left 
 plt.show()
 
 # Save the figure
-output_figure_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure1\\E_split_top_go_terms.png'
+output_figure_path = '.../E_split_top_go_terms.png'
 plt.savefig(output_figure_path)
 
 #Now let's start to plot protein families
@@ -451,14 +449,14 @@ def process_dataset(file_path, metal_type=None):
     return df[['Metal_type', 'Protein_Families']]
 
 # Process both datasets
-metal_binding_df = process_dataset('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_metals_final.csv')
-nonmetal_binding_df = process_dataset('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\refined_integrated_dataset_nonmetal.csv', metal_type='non-metal')
+metal_binding_df = process_dataset('.../refined_integrated_dataset_metals_final.csv')
+nonmetal_binding_df = process_dataset('.../refined_integrated_dataset_nonmetal.csv', metal_type='non-metal')
 
 # Combine both datasets
 combined_df = pd.concat([metal_binding_df, nonmetal_binding_df], ignore_index=True)
 
 # Save the combined dataset to the specified directory
-output_file_path = 'C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\protein_family_data.csv'
+output_file_path = '.../protein_family_data.csv'
 combined_df.to_csv(output_file_path, index=False)
 
 print(f"Data processing completed. The combined data is saved to {output_file_path}")
@@ -469,7 +467,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Read the protein family data
-protein_family_df = pd.read_csv('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\protein_family_data.csv')
+protein_family_df = pd.read_csv('.../protein_family_data.csv')
 
 # Replace missing values
 protein_family_df['Protein_Families'] = protein_family_df['Protein_Families'].fillna('NA')
@@ -503,5 +501,5 @@ plt.title('', fontsize=14, fontweight='bold')
 plt.tight_layout()
 
 # Save the figure to the specified path
-plt.savefig('C:\\Users\\jonat\\OneDrive - University of Glasgow\\Metalloproteome\\Submission\\Figures\\5.0\\Figure1\\F_Protein_Families.png', dpi=300)
+plt.savefig('.../F_Protein_Families.png', dpi=300)
 plt.show()
