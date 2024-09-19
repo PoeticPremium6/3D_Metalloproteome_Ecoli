@@ -5,7 +5,7 @@ adhE ana b1241 JW1228	FE	1.076923077	Industrial	ILT_MG1655;TOL_adipic_acid;BOP27
 amiA yfeE b2435 JW2428	ZN	1	Basic	NA
 ansB b2957 JW2924	ZN	1.142857143	Industrial	NA
 arcA cpxC dye fexA msp seg sfrA b4401 JW4364	MG	1.162162162	Stress	TOL_propanediol
-aroG b0754 JW0737	PB;MN	2.641791045	Basic	TOL_propanediol
+aroG b0754 JW0737	PB;MN	2.641791045	Industrial	TOL_propanediol
 asnC b3743 JW3721	MG	1	Basic	ECNR2.1;genome-reduced_strain_MS56-M9-MG1655
 atoD b2221 JW2215	MG	1.444444444	Basic	Ecoli_Ethanol_Stress_ALE;TOL_2_3_butanediol
 cdd b2143 JW2131	ZN;U	1	Basic	GYD_1500uL;TOL_propanediol
