@@ -31,11 +31,6 @@ print("\nTop 10 GO Term Descriptions by Mean Close Mutations Count:")
 for index, row in top_mean_mutations_by_go_zn.iterrows():
     print(f"{row['GO_Descriptions']}: {row['close_mutations_count']}")
 
-# Prepare data for mean mutations count analysis
-go_terms_expanded_zn = df_zn.assign(GO_Descriptions=df_zn['GO_Descriptions'].str.split('; ')).explode('GO_Descriptions')
-mean_mutations_by_go_zn = go_terms_expanded_zn.groupby('GO_Descriptions')['close_mutations_count'].mean().reset_index()
-top_mean_mutations_by_go_zn = mean_mutations_by_go_zn.nlargest(10, 'close_mutations_count')
-
 # Function to wrap labels
 def wrap_labels(labels, width):
     return ['\n'.join(textwrap.wrap(label, width)) for label in labels]
