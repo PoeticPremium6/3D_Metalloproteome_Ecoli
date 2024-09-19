@@ -50,16 +50,33 @@ mutation_rate_metal_log = np.log1p(mutation_rate_metal)
 mutation_rate_metal_log = mutation_rate_metal_log.sort_index(ascending=False)
 
 # Create the heatmap with gridlines and log scale using the reversed 'viridis' colormap for correct color mapping
-plt.figure(figsize=(12, 8))
+plt.figure(figsize=(14, 10))  # Increased figure size for better readability
 ax = sns.heatmap(mutation_rate_metal_log, annot=True, cmap='viridis_r', fmt=".2f",
+                 annot_kws={"size": 12, "weight": 'bold'},  # Bold-face text within cells
                  cbar_kws={'label': 'Log-scaled Average Mutation Rate'},
                  linewidths=0.5, linecolor='lightgrey')  # Add gridlines
 
-plt.title('Heatmap of Log-scaled Average Mutation Rate by Grantham Category and Metal Type')
-plt.xlabel('Metal Type', fontsize=14, fontweight='bold')
-plt.ylabel('Grantham Category', fontsize=14, fontweight='bold')
-plt.xticks(rotation=45)
-plt.yticks(rotation=0)  # Ensure the y-axis labels are horizontal
+# Title and labels with increased font size and bold-face
+plt.title('Heatmap of Log-scaled Average Mutation Rate by Grantham Category and Metal Type', fontsize=20, fontweight='bold')
+plt.xlabel('Metal Type', fontsize=16, fontweight='bold')
+plt.ylabel('Grantham Category', fontsize=16, fontweight='bold')
+
+# Increase font size of x and y ticks and make them bold
+plt.xticks(rotation=45, fontsize=14, fontweight='bold')
+plt.yticks(rotation=0, fontsize=14, fontweight='bold')
+
+# Adjust colorbar label and ticks
+cbar = plt.gca().collections[0].colorbar
+cbar.ax.set_ylabel('Log-scaled Average Mutation Rate', fontsize=16, fontweight='bold')
+cbar.ax.yaxis.label.set_fontsize(16)
+cbar.ax.tick_params(labelsize=14, width=1.5)
+for label in cbar.ax.get_yticklabels():
+    label.set_fontsize(14)
+    label.set_fontweight('bold')
+
+# Adjust layout to shift plot to the right
+plt.tight_layout(pad=3.0, rect=[0.05, 0.03, 1, 1])  # Adjust the left padding
+
 
 # Save the figure (commented out for now)
  plt.savefig('.../A_Mutation_Rate_Heatmap_Log_Scale.png')
